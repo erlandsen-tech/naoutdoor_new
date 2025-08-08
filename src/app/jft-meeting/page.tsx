@@ -67,7 +67,7 @@ export default function JFTMeeting() {
             <br />
             <br />
             Again, thanks for coming tonight. Would all those who care to, join in a circle to
-            close with the the Serenity Prayer followed by: "Keep coming back. It works"
+            close with the the Serenity Prayer followed by: &quot;Keep coming back. It works&quot;
             <br />
             <br />
           </p>

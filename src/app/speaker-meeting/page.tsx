@@ -82,7 +82,7 @@ export default function SpeakerMeeting() {
         <strong>Leader:</strong>
         <br />
         <br />
-        Now let's read the cards from our Basic Text:
+        Now let&#39;s read the cards from our Basic Text:
         <br />
         <br />
         a) Who Is an Addict?
@@ -148,7 +148,7 @@ export default function SpeakerMeeting() {
         <br />
         <br />
         Would all those who care to, join in a circle to close with the Serenity Prayer
-        ending with "Keep coming back. It works!"
+        ending with &quot;Keep coming back. It works!&quot;
         <br />
         <br />
           </p>
