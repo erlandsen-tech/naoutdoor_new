@@ -1,0 +1,131 @@
+/* Pamflets CSS - Only styles specific to pamflet components */
+
+/* ========================================
+   PAMFLET LAYOUT STYLES
+   ======================================== */
+
+/* Main pamflet container */
+.pam {
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+    flex: 0 1 100vw;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Pamflet content box */
+.box-pam {
+    display: flex;
+    flex-flow: column;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    margin: 10px auto;
+    padding: 16px;
+    max-width: 1100px;
+    width: calc(100% - 20px);
+}
+
+.box-pam h1, 
+.box-pam h2 {
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    margin: 8px 0 16px 0;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+
+.box-pam p {
+    text-align: start;
+    color: black;
+    line-height: 1.6;
+}
+
+/* ========================================
+   PAMFLET CONTENT TYPE STYLES
+   Each pamflet type has a distinct background color
+   ======================================== */
+
+/* "What" - Hva / What is the NA Program */
+#pam-hva {
+    background-color: lightyellow;
+}
+
+/* "Just for Today" - Bare For Idag */
+#pam-bare {
+    background-color: violet;
+}
+
+/* "How" - Hvordan / How it Works */
+#pam-hvordan {
+    background-color: whitesmoke;
+}
+
+/* "Who" - Hvem / Who is an Addict */
+#pam-hvem {
+    background-color: lightblue;
+}
+
+/* "Why" - Hvorfor / Why Are We Here */
+#pam-hvorfor {
+    background-color: burlywood;
+}
+
+/* "Traditions" - Tradisjoner / The Twelve Traditions */
+#pam-trad {
+    background-color: lightgray;
+}
+
+/* "We Do Recover" - Vi Tilfrisknar */
+#pam-vitil {
+    background-color: lightgreen;
+}
+
+/* Speaker meeting page */
+#pam-speaker {
+    background-color: whitesmoke;
+}
+
+/* JFT meeting page */
+#pam-jft-meeting {
+    background-color: #f5f5ff; /* very light tint for contrast */
+}
+
+/* ========================================
+   PAMFLET NAVIGATION STYLES
+   ======================================== */
+
+/* Back button styling for pamflets */
+.pamflet-back {
+    height: 40px;
+    width: auto;
+}
+
+/* Minimal bootstrap-like helpers used in legacy markup within pamphlet pages */
+.d-block { display: block; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.fixed-bottom { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); }
+.footer { z-index: 20; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.col-12 { width: 100%; }
+.text-wrap { white-space: normal; }
+
+/* ========================================
+   RESPONSIVE / MOBILE STYLES
+   ======================================== */
+
+/* Ensure pamflets work well on mobile devices */
+@media (max-width: 768px) {
+    .pam {
+        flex-direction: column;
+    }
+    
+    .box-pam {
+        margin: 5px;
+        padding: 8px;
+        border-width: 2px;
+    }
+} 

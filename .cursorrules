@@ -1,0 +1,74 @@
+## Purpose
+- Define the project stack, coding conventions, and design constraints so all contributors (and AI tools) produce consistent edits.
+- Clarify how to use the legacy `old/` folder during the rebuild.
+
+## Tech Stack
+- **Framework**: Next.js 15 (App Router) with React 19
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss` (see `src/app/globals.css` and `src/app/pamflets.css`)
+- **Linting**: ESLint Flat Config, extends `next/core-web-vitals` and `next/typescript`
+- **Fonts**: `next/font` (Geist and Geist Mono)
+- **Build/Dev**: `next build`, `next dev --turbopack`
+- **Path alias**: `@/*` → `./src/*` (see `tsconfig.json`)
+
+## Project Structure & Routing
+- **App Router** under `src/app/` with file-based routes.
+  - Language sections: `src/app/{language}/page.tsx` and nested routes (e.g., `just-for-today/page.tsx`).
+  - Home route: `src/app/page.tsx`.
+- **Layout**: Root layout at `src/app/layout.tsx` wraps `src/components/Layout.tsx` (header, nav, footer). Keep this consistent across pages.
+- **Styles**:
+  - Global styles: `src/app/globals.css` (imports Tailwind and sets theme tokens)
+  - Pamphlet-only styles: `src/app/pamflets.css` (scoped patterns for pamphlet pages)
+- **Assets**: `public/` for images and static files. Use `next/image` where applicable.
+
+## Legacy Source Guidance (old/)
+- The `old/` directory contains the previous site. It is a reference for migrating content pages only.
+- **Do** use `old/` to replicate textual content and general structure for pamphlets/readings and language pages.
+- **Do NOT** copy or reuse the old front page design. The new homepage must be (re)designed in the new style.
+- **Do NOT** introduce Bootstrap or legacy CSS from `old/`. Convert visual styles to Tailwind utility classes or, if needed, extend `pamflets.css` for pamphlet-specific needs.
+
+## Design Constraints
+- **Server Components by default**. Add `"use client"` only where interactivity needs it (e.g., toggling menus).
+- **Tailwind-first styling**. Avoid CSS-in-JS and third-party UI frameworks unless explicitly approved.
+- **Keep layout consistent** via `src/components/Layout.tsx`:
+  - Header with brand link, hamburger menu, and defined submenus.
+  - Footer contact info remains present across pages.
+- **Responsive**: Pages must be fully responsive (320px–1440px). Verify header menu behavior at mobile widths.
+- **Accessibility**:
+  - Semantic headings (preserve hierarchy), lists, and landmarks.
+  - Provide `alt` text for images, labels for controls, and visible focus states.
+  - Ensure color contrast meets WCAG AA.
+- **Performance**:
+  - Use `next/image` and `next/link`.
+  - Prefer static assets in `public/` and avoid large blocking scripts.
+  - Keep client bundles small; avoid unnecessary client components.
+
+## Implementation Conventions
+- **Routing**: Create routes as folders with `page.tsx`. Co-locate route-specific components within the route folder when reasonable.
+- **Components**: Shared UI in `src/components/`. Keep components small and focused.
+- **Imports**: Use the alias `@/` for paths under `src/`.
+- **TypeScript**: No `any`. Satisfy strict typing; define props/interfaces explicitly.
+- **Images**: Prefer `next/image` with explicit `width`/`height` for local assets. For `public/` assets, reference with `/path`.
+- **CSS**: Only add global styles in `globals.css` or pamphlet-specific rules in `pamflets.css`. Avoid adding unrelated global CSS.
+
+## Content Migration Rules
+- Mirror the language structure from `old/` into `src/app/{language}/...`.
+- Preserve textual content fidelity (headings, paragraphs), but modernize markup for semantics and accessibility.
+- Convert Bootstrap classes (e.g., `btn`, `container`) to Tailwind utilities.
+- Keep URLs stable where possible; if a route changes, add a redirect in Next config when needed.
+
+## Commands
+- Dev: `npm run dev`
+- Lint: `npm run lint`
+- Build: `npm run build`
+- Start: `npm run start`
+
+## Do / Don’t
+- Do: Use `old/` as a reference for content pages.
+- Do: Keep navigation and page layout consistent with `src/components/Layout.tsx`.
+- Do: Prefer server components; only opt into client components when necessary.
+- Don’t: Reuse the old front page design.
+- Don’t: Add Bootstrap or legacy CSS from `old/`.
+- Don’t: Introduce new global CSS files without approval.
+
+
