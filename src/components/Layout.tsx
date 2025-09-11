@@ -78,6 +78,15 @@ export default function Layout({ children }: LayoutProps) {
                       Ski trail map
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/ski-and-recovery/program"
+                      className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 block py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Program
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>
