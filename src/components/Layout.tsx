@@ -1,15 +1,40 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import TextSizeControl from "./TextSizeControl";
 
 interface LayoutProps {
   children: React.ReactNode;
+}
+
+const READING_PATH_PREFIXES = [
+  "/readings",
+  "/speaker-meeting",
+  "/jft-meeting",
+  "/english",
+  "/norwegian",
+  "/swedish",
+  "/danish",
+  "/dutch",
+  "/german",
+  "/french",
+  "/finnish",
+];
+
+function isReadingRoute(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return READING_PATH_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  );
 }
 
 export default function Layout({ children }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [skiSubmenuOpen, setSkiSubmenuOpen] = useState(false);
   const [bikeSubmenuOpen, setBikeSubmenuOpen] = useState(false);
+  const pathname = usePathname();
+  const showTextSizeControl = isReadingRoute(pathname);
 
   function handleLinkClick() {
     setMenuOpen(false);
@@ -143,6 +168,7 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main content */}
       <main className="flex-1 flex flex-col relative">
+        {showTextSizeControl && <TextSizeControl />}
         {children}
       </main>
     </div>

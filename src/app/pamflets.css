@@ -27,19 +27,21 @@
     width: calc(100% - 20px);
 }
 
-.box-pam h1, 
+.box-pam h1,
 .box-pam h2 {
     text-align: center;
     color: black;
     font-weight: 700;
     margin: 8px 0 16px 0;
-    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+    font-size: calc(clamp(1.5rem, 2vw + 1rem, 2rem) * var(--reading-font-size, 1));
 }
 
 .box-pam p {
     text-align: start;
     color: black;
     line-height: 1.6;
+    font-size: calc(1rem * var(--reading-font-size, 1));
+    overflow-wrap: break-word;
 }
 
 /* ========================================
