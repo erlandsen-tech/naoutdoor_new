@@ -145,10 +145,6 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-1 flex flex-col relative">
         {children}
       </main>
-
-      {/* Footer */}
-      <footer className="px-6 py-4 bg-gray-100 dark:bg-gray-900 text-center text-gray-700 dark:text-gray-300 text-sm relative z-10">
-      </footer>
     </div>
   );
-} 
+}
