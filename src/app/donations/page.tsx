@@ -87,34 +87,37 @@ export default function DonationsPage() {
             </div>
           </article>
         </div>
-
-        <footer className="mt-10 text-center text-sm text-gray-600 dark:text-gray-400"></footer>
       </section>
     </div>
   );
 }
 
 function CopyChip({ value }: { value: string }) {
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
   async function onCopy() {
     try {
       await navigator.clipboard.writeText(value);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setStatus("ok");
     } catch {
-      // ignore
+      setStatus("err");
     }
+    setTimeout(() => setStatus("idle"), 1500);
   }
+  const label = status === "ok" ? "Copied" : status === "err" ? "Copy failed" : "Copy";
+  const tone =
+    status === "ok"
+      ? "bg-green-600 text-white border-green-600"
+      : status === "err"
+      ? "bg-red-600 text-white border-red-600"
+      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700";
   return (
     <button
       type="button"
       onClick={onCopy}
       aria-label={`Copy ${value}`}
-      className={`px-2 py-0.5 text-xs rounded border ${
-        copied ? "bg-green-600 text-white border-green-600" : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
-      }`}
+      className={`px-2 py-0.5 text-xs rounded border ${tone}`}
     >
-      {copied ? "Copied" : "Copy"}
+      {label}
     </button>
   );
 }

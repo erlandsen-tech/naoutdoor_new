@@ -32,22 +32,19 @@ export default function Readings() {
         
         <div className="grid grid-cols-3 gap-4 mb-6">
           {/* Row 2 */}
-          <Link href="/english" className="flex justify-center">
-            <Image src="/flags/ireland.png" alt="Irish" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
           <Link href="/danish" className="flex justify-center">
             <Image src="/flags/denmark.png" alt="Danish" width={60} height={40} className="hover:scale-110 transition-transform" />
           </Link>
           <Link href="/dutch" className="flex justify-center">
             <Image src="/flags/netherlands.png" alt="Dutch" width={60} height={40} className="hover:scale-110 transition-transform" />
           </Link>
-        </div>
-        
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          {/* Row 3 */}
           <Link href="/german" className="flex justify-center">
             <Image src="/flags/germany.png" alt="German" width={60} height={40} className="hover:scale-110 transition-transform" />
           </Link>
+        </div>
+
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          {/* Row 3 */}
           <Link href="/french" className="flex justify-center">
             <Image src="/flags/france.png" alt="French" width={60} height={40} className="hover:scale-110 transition-transform" />
           </Link>

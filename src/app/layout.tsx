@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NA Outdoor",
-  description: "Created in loving service for NA Outdoor byt its members <3",
+  description: "Created in loving service for NA Outdoor by its members <3",
 };
 
 export default function RootLayout({
