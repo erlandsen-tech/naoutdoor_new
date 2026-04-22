@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 
 const LANGUAGES: Array<{ locale: Locale; labelKey: Locale; flag: string }> = [
@@ -25,10 +25,6 @@ const PAMPHLET_SLUGS = [
   "we-do-recover",
 ] as const;
 
-function localePrefix(locale: Locale): string {
-  return locale === routing.defaultLocale ? "" : `/${locale}`;
-}
-
 export default async function Readings({
   params,
 }: {
@@ -42,8 +38,6 @@ export default async function Readings({
     getTranslations({ locale, namespace: "pamphlets" }),
     getTranslations({ locale, namespace: "languages" }),
   ]);
-
-  const prefix = localePrefix(locale as Locale);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -91,13 +85,13 @@ export default async function Readings({
         </div>
         <div className="grid gap-3 md:grid-cols-2">
           <FormatCard
-            href={`${prefix}/speaker-meeting`}
+            href="/speaker-meeting"
             eyebrow="Open meeting"
             title="Speaker format"
             body="The classic NA speaker meeting opening and closing script."
           />
           <FormatCard
-            href={`${prefix}/jft-meeting`}
+            href="/jft-meeting"
             eyebrow="Daily reader"
             title="JFT & SPAD format"
             body="For Just for Today and Spiritual Principle a Day meetings."
@@ -117,7 +111,7 @@ export default async function Readings({
           {PAMPHLET_SLUGS.map((slug) => (
             <Link
               key={slug}
-              href={`${prefix}/readings/${slug}`}
+              href={`/readings/${slug}`}
               className="group flex items-center justify-between rounded-[10px] border border-espresso/10 bg-white/60 px-4 py-3 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-espresso/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
             >
               <span
@@ -149,7 +143,8 @@ export default async function Readings({
           {LANGUAGES.filter((l) => l.locale !== locale).map((lang) => (
             <Link
               key={lang.locale}
-              href={`${localePrefix(lang.locale)}/readings`}
+              href="/readings"
+              locale={lang.locale}
               className="group flex flex-col items-center gap-3 rounded-[12px] border border-espresso/10 bg-white/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-espresso/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
             >
               <div

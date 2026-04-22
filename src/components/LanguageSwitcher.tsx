@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 
 const FLAGS: Record<Locale, string> = {
@@ -16,6 +16,23 @@ const FLAGS: Record<Locale, string> = {
   fr: "/flags/france.png",
   fi: "/flags/finland.png",
 };
+
+// Strip any leading /{locale}/ prefix (for non-default locales) from a raw
+// pathname so we can re-prefix it with the target locale without doubling up.
+function stripLocalePrefix(pathname: string): string {
+  for (const code of routing.locales) {
+    if (code === routing.defaultLocale) continue;
+    if (pathname === `/${code}`) return "/";
+    if (pathname.startsWith(`/${code}/`)) return pathname.slice(code.length + 1);
+  }
+  return pathname;
+}
+
+function buildLocaleHref(locale: Locale, bare: string): string {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  if (bare === "/" || bare === "") return prefix || "/";
+  return `${prefix}${bare}`;
+}
 
 export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
@@ -48,9 +65,8 @@ export default function LanguageSwitcher() {
   function switchTo(next: Locale) {
     setOpen(false);
     if (next === locale) return;
-    // router.replace preserves the current pathname under the new locale.
-    // Cookie update is handled by next-intl automatically.
-    router.replace(pathname, { locale: next });
+    const bare = stripLocalePrefix(pathname);
+    router.replace(buildLocaleHref(next, bare));
   }
 
   return (
