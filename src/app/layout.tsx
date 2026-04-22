@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Archivo_Narrow } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 import Layout from "../components/Layout";
 
@@ -69,15 +71,18 @@ export const metadata: Metadata = {
   // auto-wired by Next's file-based metadata conventions.
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${fraunces.variable} ${archivoNarrow.variable} antialiased`}>
-        <Layout>{children}</Layout>
+        <NextIntlClientProvider>
+          <Layout>{children}</Layout>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
