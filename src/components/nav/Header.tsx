@@ -4,11 +4,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { NAV_ITEMS, activeId, hasReadableText } from "./navConfig";
+import { routing } from "@/i18n/routing";
 import TextSizeControl from "../TextSizeControl";
+import LanguageSwitcher from "../LanguageSwitcher";
+
+function localePrefix(locale: string): string {
+  return locale === routing.defaultLocale ? "" : `/${locale}`;
+}
 
 export default function Header() {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("nav");
   const active = activeId(pathname);
   const showTextSize = hasReadableText(pathname);
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +29,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const prefix = localePrefix(locale);
+
   return (
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-200 ${
@@ -30,7 +41,7 @@ export default function Header() {
       style={{ paddingTop: "var(--safe-top)" }}
     >
       <a href="#main" className="skip-link">
-        Skip to content
+        {t("skipToContent")}
       </a>
 
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:py-3.5">
@@ -38,9 +49,9 @@ export default function Header() {
          *  Always visible on all screens; the header's cream backdrop keeps
          *  the dark logo legible even over dark hero imagery. */}
         <Link
-          href="/"
+          href={prefix || "/"}
           className="flex items-center gap-3 group"
-          aria-label="NA Outdoor — home"
+          aria-label={t("brandAria")}
         >
           <Image
             src="/design/na-symbol.png"
@@ -61,7 +72,7 @@ export default function Header() {
                 lineHeight: 1,
               }}
             >
-              NA Outdoor
+              {t("brand")}
             </span>
             <span
               className="label text-espresso/55 mt-[3px] hidden sm:inline-block"
@@ -70,25 +81,25 @@ export default function Header() {
                 letterSpacing: "0.3em",
               }}
             >
-              Trysil · Norway
+              {t("brandTagline")}
             </span>
           </span>
         </Link>
 
         <div className="flex items-center gap-3">
-          {/* Text-size control — only on reading pages. Moved here so it
-           * never overlaps headlines or body text. */}
+          {/* Text-size control — only on reading pages. */}
           {showTextSize && <TextSizeControl />}
 
-          {/* Desktop nav — flat pill with // separators, eccna41-inspired */}
-          <nav aria-label="Primary" className="hidden md:flex items-center">
+          {/* Desktop nav */}
+          <nav aria-label={t("primaryNav")} className="hidden md:flex items-center">
             <div className="flex items-center gap-1 rounded-full border border-espresso/15 bg-[rgba(255,255,255,0.7)] px-2 py-1.5 backdrop-blur-md shadow-[0_4px_14px_rgba(31,22,17,0.06)]">
               {NAV_ITEMS.map((item, i) => {
                 const isActive = active === item.id;
+                const href = `${prefix}${item.href === "/" ? "" : item.href}` || "/";
                 return (
                   <span key={item.id} className="flex items-center">
                     <Link
-                      href={item.href}
+                      href={href}
                       aria-current={isActive ? "page" : undefined}
                       className={`label relative rounded-full px-3.5 py-2 text-[11.5px] transition-all ${
                         isActive
@@ -97,7 +108,7 @@ export default function Header() {
                       }`}
                       style={{ letterSpacing: "0.14em" }}
                     >
-                      {item.label}
+                      {t(item.id)}
                     </Link>
                     {i < NAV_ITEMS.length - 1 && (
                       <span
@@ -112,6 +123,9 @@ export default function Header() {
               })}
             </div>
           </nav>
+
+          {/* Language switcher — visible on all breakpoints */}
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

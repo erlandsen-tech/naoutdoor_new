@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "NA Outdoor",
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Luonto & Toipuminen",
+    "description": "Nimettömien Narkomaanien jäsenten yhteisö Norjassa, joka löytää voimaa, yhteyttä ja iloa luonnosta. Kaksi vuosittaista tapahtumaa Trysilissä — Ski & Recovery (talvi) ja Bike 2 Basic (loppukesä).",
+    "ogTitle": "NA Outdoor — Luonto & Toipuminen",
+    "ogDescription": "Kaksi vuosittaista NA-tapahtumaa Trysilissä, Norjassa. Ski & Recovery (talvi) · Bike 2 Basic (loppukesä)."
+  },
+  "nav": {
+    "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — etusivu",
+    "brandTagline": "Trysil · Norja",
+    "primaryNav": "Päävalikko",
+    "primaryNavMobile": "Päävalikko mobiili",
+    "skipToContent": "Siirry sisältöön",
+    "toggleMenu": "Valikko",
+    "home": "Etusivu",
+    "homeShort": "Etu",
+    "ski": "Ski & Recovery",
+    "skiShort": "Ski",
+    "bike": "Bike 2 Basic",
+    "bikeShort": "Bike",
+    "readings": "Kirjallisuus",
+    "readingsShort": "Kirj.",
+    "donate": "Lahjoita",
+    "donateShort": "Lahj."
+  },
+  "home": {
+    "heroEyebrow": "Nimettömät Narkomaanit · Trysil, Norja",
+    "heroIntro": "Löydämme voimaa",
+    "heroNature": "Luonnosta",
+    "heroAndRecovery": "& Toipumisesta",
+    "nextUp": "Seuraava",
+    "aboutEyebrow": "Meistä",
+    "about": "NA Outdoor on yhteisö Nimettömien Narkomaanien Norjan jäsenistä, jotka löytävät voimaa, yhteyttä ja iloa luonnosta.",
+    "aboutTail": "Mahdollistettu seitsemännen perinteen kautta — perustuu yksinomaan jäsenten vapaaehtoisiin lahjoituksiin.",
+    "eventsSectionHidden": "Vuosittaiset tapahtumat"
+  },
+  "readings": {
+    "eyebrow": "Kirjallisuus & formaatit",
+    "title": "Kirjallisuus.",
+    "subtitle": "Kokousformaatit ja perus-NA-kirjallisuus, saatavilla kahdeksalla kielellä.",
+    "meetingFormatHeader": "Kokousformaatti",
+    "literatureHeader": "Kirjallisuus",
+    "otherLanguagesHeader": "Muut kielet",
+    "openCta": "Avaa",
+    "speakerEyebrow": "Avoin kokous",
+    "speakerTitle": "Speaker-formaatti",
+    "speakerBody": "Klassisen NA-speaker-kokouksen avaus- ja päätösskripti.",
+    "jftEyebrow": "Päivittäinen luku",
+    "jftTitle": "JFT & SPAD-formaatti",
+    "jftBody": "Just for Today- ja Spiritual Principle a Day -kokouksiin."
+  },
+  "languages": {
+    "en": "English",
+    "nb": "Norsk",
+    "sv": "Svenska",
+    "da": "Dansk",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "fr": "Français",
+    "fi": "Suomi"
+  },
+  "common": {
+    "back": "Takaisin",
+    "backToReadings": "Takaisin kirjallisuuteen",
+    "copy": "Kopioi",
+    "copied": "Kopioitu",
+    "copyFailed": "Kopiointi epäonnistui",
+    "copiedToClipboard": "Kopioitu leikepöydälle",
+    "couldNotCopy": "Kopiointi ei onnistunut"
+  }
+}

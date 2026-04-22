@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "NA Outdoor",
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Natuur & Herstel",
+    "description": "Een gemeenschap van leden van Narcotics Anonymous in Noorwegen die in de natuur kracht, verbinding en vreugde vinden. Twee jaarlijkse bijeenkomsten in Trysil — Ski & Recovery (winter) en Bike 2 Basic (nazomer).",
+    "ogTitle": "NA Outdoor — Natuur & Herstel",
+    "ogDescription": "Twee jaarlijkse NA-bijeenkomsten in Trysil, Noorwegen. Ski & Recovery (winter) · Bike 2 Basic (nazomer)."
+  },
+  "nav": {
+    "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — home",
+    "brandTagline": "Trysil · Noorwegen",
+    "primaryNav": "Hoofdmenu",
+    "primaryNavMobile": "Hoofdmenu mobiel",
+    "skipToContent": "Naar inhoud",
+    "toggleMenu": "Menu",
+    "home": "Home",
+    "homeShort": "Home",
+    "ski": "Ski & Recovery",
+    "skiShort": "Ski",
+    "bike": "Bike 2 Basic",
+    "bikeShort": "Bike",
+    "readings": "Literatuur",
+    "readingsShort": "Lit.",
+    "donate": "Doneren",
+    "donateShort": "Doneren"
+  },
+  "home": {
+    "heroEyebrow": "Narcotics Anonymous · Trysil, Noorwegen",
+    "heroIntro": "Wij vinden kracht door",
+    "heroNature": "Natuur",
+    "heroAndRecovery": "& Herstel",
+    "nextUp": "Volgende",
+    "aboutEyebrow": "Over ons",
+    "about": "NA Outdoor is een gemeenschap van leden van Narcotics Anonymous Noorwegen die in de natuur kracht, verbinding en vreugde vinden.",
+    "aboutTail": "Mogelijk gemaakt door de Zevende Traditie — uitsluitend gedragen door vrijwillige bijdragen van onze leden.",
+    "eventsSectionHidden": "Jaarlijkse evenementen"
+  },
+  "readings": {
+    "eyebrow": "Literatuur & formats",
+    "title": "Literatuur.",
+    "subtitle": "Meetingformats en fundamentele NA-literatuur, beschikbaar in acht talen.",
+    "meetingFormatHeader": "Meetingformat",
+    "literatureHeader": "Literatuur",
+    "otherLanguagesHeader": "Andere talen",
+    "openCta": "Openen",
+    "speakerEyebrow": "Open meeting",
+    "speakerTitle": "Speaker-format",
+    "speakerBody": "Het klassieke openings- en slotscript van een NA-speakermeeting.",
+    "jftEyebrow": "Dagelijkse lezing",
+    "jftTitle": "JFT & SPAD-format",
+    "jftBody": "Voor Just for Today- en Spiritual Principle a Day-meetings."
+  },
+  "languages": {
+    "en": "English",
+    "nb": "Norsk",
+    "sv": "Svenska",
+    "da": "Dansk",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "fr": "Français",
+    "fi": "Suomi"
+  },
+  "common": {
+    "back": "Terug",
+    "backToReadings": "Terug naar literatuur",
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd",
+    "copyFailed": "Kopiëren mislukt",
+    "copiedToClipboard": "Naar klembord gekopieerd",
+    "couldNotCopy": "Kopiëren mislukt"
+  }
+}

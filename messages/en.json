@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "NA Outdoor",
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Nature & Recovery",
+    "description": "A fellowship of Narcotics Anonymous members in Norway who find strength, connection, and joy through nature. Two annual gatherings in Trysil — Ski & Recovery (winter) and Bike 2 Basic (summer).",
+    "ogTitle": "NA Outdoor — Nature & Recovery",
+    "ogDescription": "Two annual NA gatherings in Trysil, Norway. Ski & Recovery (winter) · Bike 2 Basic (summer)."
+  },
+  "nav": {
+    "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — home",
+    "brandTagline": "Trysil · Norway",
+    "primaryNav": "Primary",
+    "primaryNavMobile": "Primary mobile",
+    "skipToContent": "Skip to content",
+    "toggleMenu": "Toggle menu",
+    "home": "Home",
+    "homeShort": "Home",
+    "ski": "Ski & Recovery",
+    "skiShort": "Ski",
+    "bike": "Bike 2 Basic",
+    "bikeShort": "Bike",
+    "readings": "Readings",
+    "readingsShort": "Readings",
+    "donate": "Donate",
+    "donateShort": "Donate"
+  },
+  "home": {
+    "heroEyebrow": "Narcotics Anonymous · Trysil, Norway",
+    "heroIntro": "We find strength through",
+    "heroNature": "Nature",
+    "heroAndRecovery": "& Recovery",
+    "nextUp": "Next",
+    "aboutEyebrow": "About us",
+    "about": "NA Outdoor is a fellowship of members within Narcotics Anonymous Norway who find strength, connection, and joy through nature.",
+    "aboutTail": "Made possible by the 7th Tradition — supported solely by voluntary contributions from our members.",
+    "eventsSectionHidden": "Annual events"
+  },
+  "readings": {
+    "eyebrow": "Readings & formats",
+    "title": "Readings.",
+    "subtitle": "Meeting formats and core NA literature, available in eight languages.",
+    "meetingFormatHeader": "Meeting format",
+    "literatureHeader": "Literature",
+    "otherLanguagesHeader": "Other languages",
+    "openCta": "Open",
+    "speakerEyebrow": "Open meeting",
+    "speakerTitle": "Speaker format",
+    "speakerBody": "The classic NA speaker meeting opening and closing script.",
+    "jftEyebrow": "Daily reader",
+    "jftTitle": "JFT & SPAD format",
+    "jftBody": "For Just for Today and Spiritual Principle a Day meetings."
+  },
+  "languages": {
+    "en": "English",
+    "nb": "Norsk",
+    "sv": "Svenska",
+    "da": "Dansk",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "fr": "Français",
+    "fi": "Suomi"
+  },
+  "common": {
+    "back": "Back",
+    "backToReadings": "Back to readings",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "copiedToClipboard": "Copied to clipboard",
+    "couldNotCopy": "Couldn't copy"
+  }
+}

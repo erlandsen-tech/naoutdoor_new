@@ -1,0 +1,160 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { routing, type Locale } from "@/i18n/routing";
+
+const FLAGS: Record<Locale, string> = {
+  en: "/flags/united-kingdom.png",
+  nb: "/flags/norway.png",
+  sv: "/flags/sweden.png",
+  da: "/flags/denmark.png",
+  nl: "/flags/netherlands.png",
+  de: "/flags/germany.png",
+  fr: "/flags/france.png",
+  fi: "/flags/finland.png",
+};
+
+// Strip any leading /{locale}/ prefix (for non-default locales) from a raw
+// pathname so we can re-prefix it with the target locale without doubling up.
+function stripLocalePrefix(pathname: string): string {
+  for (const code of routing.locales) {
+    if (code === routing.defaultLocale) continue;
+    if (pathname === `/${code}`) return "/";
+    if (pathname.startsWith(`/${code}/`)) return pathname.slice(code.length + 1);
+  }
+  return pathname;
+}
+
+function buildLocaleHref(locale: Locale, bare: string): string {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  if (bare === "/" || bare === "") return prefix || "/";
+  return `${prefix}${bare}`;
+}
+
+export default function LanguageSwitcher() {
+  const locale = useLocale() as Locale;
+  const pathname = usePathname();
+  const router = useRouter();
+  const t = useTranslations("languages");
+
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  // Close on outside click / Escape.
+  useEffect(() => {
+    if (!open) return;
+    function onDocClick(e: MouseEvent) {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  function switchTo(next: Locale) {
+    setOpen(false);
+    if (next === locale) return;
+    // Set NEXT_LOCALE cookie so middleware respects the new locale for any
+    // unprefixed navigation (e.g. a stray next/link href that isn't wrapped
+    // in the locale-aware Link component).
+    document.cookie = `NEXT_LOCALE=${next}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+    const bare = stripLocalePrefix(pathname);
+    router.replace(buildLocaleHref(next, bare));
+  }
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label={t(locale)}
+        className="flex items-center gap-1.5 rounded-full border border-espresso/15 bg-white/60 px-2.5 py-1.5 backdrop-blur-md transition-colors hover:bg-white"
+      >
+        <span
+          className="overflow-hidden rounded-[3px] ring-1 ring-espresso/10"
+          style={{ width: "22px", height: "15px" }}
+        >
+          <Image
+            src={FLAGS[locale]}
+            alt=""
+            width={22}
+            height={15}
+            className="h-full w-full object-cover"
+          />
+        </span>
+        <span
+          className="label text-espresso/85 hidden sm:inline"
+          style={{ fontSize: "10.5px", letterSpacing: "0.14em" }}
+        >
+          {locale.toUpperCase()}
+        </span>
+        <span aria-hidden className="text-espresso/50 text-[10px]">
+          ▾
+        </span>
+      </button>
+
+      {open && (
+        <ul
+          role="menu"
+          className="absolute right-0 mt-2 min-w-[180px] overflow-hidden rounded-[12px] border border-espresso/10 bg-white shadow-[var(--shadow-card)] z-50"
+        >
+          {routing.locales.map((l) => {
+            const active = l === locale;
+            return (
+              <li key={l} role="none">
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={() => switchTo(l)}
+                  aria-current={active ? "true" : undefined}
+                  className={`flex w-full items-center gap-3 px-3.5 py-2.5 text-left transition-colors ${
+                    active
+                      ? "bg-espresso/5 text-espresso"
+                      : "text-espresso/85 hover:bg-espresso/5"
+                  }`}
+                >
+                  <span
+                    className="overflow-hidden rounded-[3px] ring-1 ring-espresso/10"
+                    style={{ width: "26px", height: "17px" }}
+                  >
+                    <Image
+                      src={FLAGS[l]}
+                      alt=""
+                      width={26}
+                      height={17}
+                      className="h-full w-full object-cover"
+                    />
+                  </span>
+                  <span
+                    className="label flex-1"
+                    style={{ fontSize: "12px", letterSpacing: "0.08em" }}
+                  >
+                    {t(l)}
+                  </span>
+                  {active && (
+                    <span aria-hidden className="text-sunset text-[12px]">
+                      ●
+                    </span>
+                  )}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}

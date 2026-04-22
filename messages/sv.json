@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "NA Outdoor",
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Natur & Återhämtning",
+    "description": "En gemenskap av medlemmar i Anonyma Narkomaner i Norge som finner styrka, gemenskap och glädje i naturen. Två årliga samlingar i Trysil — Ski & Recovery (vinter) och Bike 2 Basic (sensommar).",
+    "ogTitle": "NA Outdoor — Natur & Återhämtning",
+    "ogDescription": "Två årliga NA-samlingar i Trysil, Norge. Ski & Recovery (vinter) · Bike 2 Basic (sensommar)."
+  },
+  "nav": {
+    "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — start",
+    "brandTagline": "Trysil · Norge",
+    "primaryNav": "Huvudmeny",
+    "primaryNavMobile": "Huvudmeny mobil",
+    "skipToContent": "Hoppa till innehåll",
+    "toggleMenu": "Meny",
+    "home": "Start",
+    "homeShort": "Start",
+    "ski": "Ski & Recovery",
+    "skiShort": "Ski",
+    "bike": "Bike 2 Basic",
+    "bikeShort": "Bike",
+    "readings": "Litteratur",
+    "readingsShort": "Litt.",
+    "donate": "Bidra",
+    "donateShort": "Bidra"
+  },
+  "home": {
+    "heroEyebrow": "Anonyma Narkomaner · Trysil, Norge",
+    "heroIntro": "Vi finner styrka genom",
+    "heroNature": "Natur",
+    "heroAndRecovery": "& Återhämtning",
+    "nextUp": "Nästa",
+    "aboutEyebrow": "Om oss",
+    "about": "NA Outdoor är en gemenskap av medlemmar i Anonyma Narkomaner Norge som finner styrka, gemenskap och glädje i naturen.",
+    "aboutTail": "Möjliggjort genom den sjunde traditionen — bärs enbart av frivilliga bidrag från medlemmarna.",
+    "eventsSectionHidden": "Årliga evenemang"
+  },
+  "readings": {
+    "eyebrow": "Litteratur & format",
+    "title": "Litteratur.",
+    "subtitle": "Mötesformat och grundläggande NA-litteratur, tillgänglig på åtta språk.",
+    "meetingFormatHeader": "Mötesformat",
+    "literatureHeader": "Litteratur",
+    "otherLanguagesHeader": "Andra språk",
+    "openCta": "Öppna",
+    "speakerEyebrow": "Öppet möte",
+    "speakerTitle": "Speaker-format",
+    "speakerBody": "Det klassiska NA-speakermötets öppnings- och avslutningsskript.",
+    "jftEyebrow": "Daglig läsning",
+    "jftTitle": "JFT & SPAD-format",
+    "jftBody": "För Just for Today- och Spiritual Principle a Day-möten."
+  },
+  "languages": {
+    "en": "English",
+    "nb": "Norsk",
+    "sv": "Svenska",
+    "da": "Dansk",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "fr": "Français",
+    "fi": "Suomi"
+  },
+  "common": {
+    "back": "Tillbaka",
+    "backToReadings": "Tillbaka till litteratur",
+    "copy": "Kopiera",
+    "copied": "Kopierad",
+    "copyFailed": "Kopiering misslyckades",
+    "copiedToClipboard": "Kopierad till urklipp",
+    "couldNotCopy": "Kunde inte kopiera"
+  }
+}

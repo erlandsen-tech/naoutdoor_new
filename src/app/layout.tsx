@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Archivo_Narrow } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
-import Layout from "../components/Layout";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -28,56 +28,29 @@ export const viewport: Viewport = {
   ],
 };
 
+// Root-level metadata is a fallback. Per-locale overrides come from
+// app/[locale]/layout.tsx's generateMetadata, which sets the title,
+// description, openGraph, and alternates.languages map.
 export const metadata: Metadata = {
   metadataBase: new URL("https://na-outdoor.org"),
-  title: {
-    default: "NA Outdoor — Nature & Recovery",
-    template: "%s · NA Outdoor",
-  },
-  description:
-    "A fellowship of Narcotics Anonymous members in Norway who find strength, connection, and joy through nature. Two annual gatherings in Trysil — Ski & Recovery (winter) and Bike 2 Basic (summer).",
   applicationName: "NA Outdoor",
-  keywords: [
-    "NA Outdoor",
-    "Narcotics Anonymous",
-    "NA Norway",
-    "Trysil",
-    "Ski & Recovery",
-    "Bike 2 Basic",
-    "recovery",
-    "fellowship",
-    "NA events",
-  ],
   authors: [{ name: "NA Outdoor" }],
-  openGraph: {
-    title: "NA Outdoor — Nature & Recovery",
-    description:
-      "Two annual NA gatherings in Trysil, Norway. Ski & Recovery (winter) · Bike 2 Basic (summer).",
-    url: "https://na-outdoor.org",
-    siteName: "NA Outdoor",
-    type: "website",
-    locale: "en_US",
-    // opengraph-image.tsx colocated in app/ auto-populates the image.
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "NA Outdoor — Nature & Recovery",
-    description:
-      "Two annual NA gatherings in Trysil, Norway. Ski & Recovery · Bike 2 Basic.",
-  },
-  // icon.png, apple-icon.png, and favicon.ico colocated in app/ are
-  // auto-wired by Next's file-based metadata conventions.
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // NextIntlClientProvider lives in [locale]/layout.tsx with an explicit
+  // `locale` prop so it re-runs on locale change. This root layout is
+  // a minimal HTML shell. `locale` on <html> is the initial-render fallback;
+  // the lang attribute is also synced client-side via HtmlLangSetter below.
+  const locale = await getLocale();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${fraunces.variable} ${archivoNarrow.variable} antialiased`}>
-        <Layout>{children}</Layout>
+        {children}
       </body>
     </html>
   );

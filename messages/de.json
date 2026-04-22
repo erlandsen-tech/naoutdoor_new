@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "NA Outdoor",
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Natur & Genesung",
+    "description": "Eine Gemeinschaft von Mitgliedern der Narcotics Anonymous in Norwegen, die in der Natur Kraft, Verbundenheit und Freude finden. Zwei jährliche Treffen in Trysil — Ski & Recovery (Winter) und Bike 2 Basic (Spätsommer).",
+    "ogTitle": "NA Outdoor — Natur & Genesung",
+    "ogDescription": "Zwei jährliche NA-Treffen in Trysil, Norwegen. Ski & Recovery (Winter) · Bike 2 Basic (Spätsommer)."
+  },
+  "nav": {
+    "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — Startseite",
+    "brandTagline": "Trysil · Norwegen",
+    "primaryNav": "Hauptmenü",
+    "primaryNavMobile": "Hauptmenü mobil",
+    "skipToContent": "Zum Inhalt springen",
+    "toggleMenu": "Menü",
+    "home": "Startseite",
+    "homeShort": "Start",
+    "ski": "Ski & Recovery",
+    "skiShort": "Ski",
+    "bike": "Bike 2 Basic",
+    "bikeShort": "Bike",
+    "readings": "Literatur",
+    "readingsShort": "Lit.",
+    "donate": "Spenden",
+    "donateShort": "Spenden"
+  },
+  "home": {
+    "heroEyebrow": "Narcotics Anonymous · Trysil, Norwegen",
+    "heroIntro": "Wir schöpfen Kraft aus",
+    "heroNature": "Natur",
+    "heroAndRecovery": "& Genesung",
+    "nextUp": "Nächstes",
+    "aboutEyebrow": "Über uns",
+    "about": "NA Outdoor ist eine Gemeinschaft von Mitgliedern der Narcotics Anonymous Norwegen, die in der Natur Kraft, Verbundenheit und Freude finden.",
+    "aboutTail": "Ermöglicht durch die Siebte Tradition — allein getragen von freiwilligen Beiträgen unserer Mitglieder.",
+    "eventsSectionHidden": "Jährliche Veranstaltungen"
+  },
+  "readings": {
+    "eyebrow": "Literatur & Formate",
+    "title": "Literatur.",
+    "subtitle": "Meeting-Formate und grundlegende NA-Literatur, verfügbar in acht Sprachen.",
+    "meetingFormatHeader": "Meeting-Format",
+    "literatureHeader": "Literatur",
+    "otherLanguagesHeader": "Andere Sprachen",
+    "openCta": "Öffnen",
+    "speakerEyebrow": "Offenes Meeting",
+    "speakerTitle": "Speaker-Format",
+    "speakerBody": "Das klassische Eröffnungs- und Schlussskript eines NA-Speaker-Meetings.",
+    "jftEyebrow": "Tägliche Lesung",
+    "jftTitle": "JFT & SPAD-Format",
+    "jftBody": "Für Just-for-Today- und Spiritual-Principle-a-Day-Meetings."
+  },
+  "languages": {
+    "en": "English",
+    "nb": "Norsk",
+    "sv": "Svenska",
+    "da": "Dansk",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "fr": "Français",
+    "fi": "Suomi"
+  },
+  "common": {
+    "back": "Zurück",
+    "backToReadings": "Zurück zur Literatur",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "copiedToClipboard": "In Zwischenablage kopiert",
+    "couldNotCopy": "Kopieren nicht möglich"
+  }
+}
