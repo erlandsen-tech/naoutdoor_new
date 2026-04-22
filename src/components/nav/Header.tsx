@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { NAV_ITEMS, activeId, hasReadableText } from "./navConfig";
 import { routing } from "@/i18n/routing";
 import TextSizeControl from "../TextSizeControl";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 function localePrefix(locale: string): string {
   return locale === routing.defaultLocale ? "" : `/${locale}`;
@@ -122,6 +123,9 @@ export default function Header() {
               })}
             </div>
           </nav>
+
+          {/* Language switcher — visible on all breakpoints */}
+          <LanguageSwitcher />
         </div>
       </div>
     </header>
