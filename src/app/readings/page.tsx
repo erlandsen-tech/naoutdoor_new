@@ -1,63 +1,170 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 
+const LANGUAGES = [
+  { href: "/english", label: "English", flag: "/flags/united-kingdom.png" },
+  { href: "/norwegian", label: "Norsk", flag: "/flags/norway.png" },
+  { href: "/swedish", label: "Svenska", flag: "/flags/sweden.png" },
+  { href: "/danish", label: "Dansk", flag: "/flags/denmark.png" },
+  { href: "/dutch", label: "Nederlands", flag: "/flags/netherlands.png" },
+  { href: "/german", label: "Deutsch", flag: "/flags/germany.png" },
+  { href: "/french", label: "Français", flag: "/flags/france.png" },
+  { href: "/finnish", label: "Suomi", flag: "/flags/finland.png" },
+];
+
 export default function Readings() {
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex flex-col items-center">
-        {/* Speaker and JFT meeting format buttons */}
-        <div className="flex flex-col gap-3 mb-6 w-full max-w-md">
-          <Link href="/speaker-meeting" className="bg-gray-800 text-white py-3 px-6 rounded text-center hover:bg-gray-700">
-            Speaker meeting format
-          </Link>
-          <Link href="/jft-meeting" className="bg-gray-800 text-white py-3 px-6 rounded text-center hover:bg-gray-700">
-            JFT & SPAD meeting format
-          </Link>
+    <div className="flex flex-1 flex-col">
+      {/* Header */}
+      <section
+        className="mx-auto w-full max-w-3xl px-6 text-center"
+        style={{ paddingTop: "clamp(30px, 6vw, 60px)", paddingBottom: "clamp(20px, 4vw, 40px)" }}
+      >
+        <div
+          className="label text-sunset"
+          style={{ fontSize: "11px", letterSpacing: "0.28em", marginBottom: "10px" }}
+        >
+          Readings & formats
         </div>
+        <h1
+          className="display"
+          style={{
+            fontSize: "var(--fs-display-l)",
+            lineHeight: "0.98",
+            letterSpacing: "-0.02em",
+            margin: 0,
+          }}
+        >
+          Readings.
+        </h1>
+        <p
+          className="mx-auto mt-4 max-w-xl italic text-ink/70"
+          style={{
+            fontFamily: "var(--font-fraunces), serif",
+            fontSize: "var(--fs-body)",
+            lineHeight: "1.55",
+          }}
+        >
+          Meeting formats and core NA literature, available in nine languages.
+        </p>
+      </section>
 
-        {/* Flag icons for different languages */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          {/* Row 1 */}
-          <Link href="/english" className="flex justify-center">
-            <Image src="/flags/united-kingdom.png" alt="English" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
-          <Link href="/norwegian" className="flex justify-center">
-            <Image src="/flags/norway.png" alt="Norwegian" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
-          <Link href="/swedish" className="flex justify-center">
-            <Image src="/flags/sweden.png" alt="Swedish" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
+      {/* Meeting formats */}
+      <section className="mx-auto w-full max-w-3xl px-4 sm:px-6">
+        <div
+          className="label text-espresso/55 mb-3"
+          style={{ fontSize: "10px", letterSpacing: "0.22em" }}
+        >
+          Meeting format
         </div>
-        
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          {/* Row 2 */}
-          <Link href="/danish" className="flex justify-center">
-            <Image src="/flags/denmark.png" alt="Danish" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
-          <Link href="/dutch" className="flex justify-center">
-            <Image src="/flags/netherlands.png" alt="Dutch" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
-          <Link href="/german" className="flex justify-center">
-            <Image src="/flags/germany.png" alt="German" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
+        <div className="grid gap-3 md:grid-cols-2">
+          <FormatCard
+            href="/speaker-meeting"
+            eyebrow="Open meeting"
+            title="Speaker format"
+            body="The classic NA speaker meeting opening and closing script."
+          />
+          <FormatCard
+            href="/jft-meeting"
+            eyebrow="Daily reader"
+            title="JFT & SPAD format"
+            body="For Just for Today and Spiritual Principle a Day meetings."
+          />
         </div>
+      </section>
 
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          {/* Row 3 */}
-          <Link href="/french" className="flex justify-center">
-            <Image src="/flags/france.png" alt="French" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
-          <Link href="/finnish" className="flex justify-center">
-            <Image src="/flags/finland.png" alt="Finnish" width={60} height={40} className="hover:scale-110 transition-transform" />
-          </Link>
+      {/* Language grid */}
+      <section className="mx-auto w-full max-w-3xl px-4 pt-10 sm:px-6 md:pt-14">
+        <div
+          className="label text-espresso/55 mb-4"
+          style={{ fontSize: "10px", letterSpacing: "0.22em" }}
+        >
+          Literature · choose a language
         </div>
-
-        {/* Back button */}
-        <Link href="/" className="mt-8">
-          <Image src="/img/left-arrow.png" alt="Back" width={40} height={40} className="hover:scale-110 transition-transform" />
-        </Link>
-      </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+          {LANGUAGES.map((lang) => (
+            <Link
+              key={lang.href}
+              href={lang.href}
+              className="group flex flex-col items-center gap-3 rounded-[12px] border border-espresso/10 bg-white/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-espresso/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
+            >
+              <div
+                className="overflow-hidden rounded-[4px] shadow-[0_1px_4px_rgba(0,0,0,0.15)] ring-1 ring-espresso/10"
+                style={{ width: "60px", height: "40px" }}
+              >
+                <Image
+                  src={lang.flag}
+                  alt=""
+                  width={60}
+                  height={40}
+                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                />
+              </div>
+              <span
+                className="label text-espresso"
+                style={{ fontSize: "11.5px", letterSpacing: "0.14em" }}
+              >
+                {lang.label}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
-} 
+}
+
+function FormatCard({
+  href,
+  eyebrow,
+  title,
+  body,
+}: {
+  href: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group block rounded-[12px] border border-espresso/10 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-espresso/30 hover:shadow-[var(--shadow-card)]"
+    >
+      <div
+        className="label text-sunset"
+        style={{ fontSize: "10px", letterSpacing: "0.22em", marginBottom: "6px" }}
+      >
+        {eyebrow}
+      </div>
+      <div
+        className="display"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "var(--fs-title)",
+          fontWeight: 700,
+          letterSpacing: "-0.01em",
+          lineHeight: "1.1",
+        }}
+      >
+        {title}
+      </div>
+      <p
+        className="mt-2 italic text-ink/70"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "var(--fs-body-s)",
+          lineHeight: "1.5",
+        }}
+      >
+        {body}
+      </p>
+      <div
+        className="label mt-4 flex items-center gap-2 text-espresso transition-transform group-hover:gap-3"
+        style={{ fontSize: "11px", letterSpacing: "0.18em" }}
+      >
+        <span>Open</span>
+        <span aria-hidden>→</span>
+      </div>
+    </Link>
+  );
+}

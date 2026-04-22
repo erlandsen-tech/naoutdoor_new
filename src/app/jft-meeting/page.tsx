@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import ReadingFooter from "@/components/ReadingFooter";
 
 export default function JFTMeeting() {
   return (
+    <>
     <div>
       <div className="pam" id="pam-jft-meeting">
         <div className="box-pam">
@@ -85,6 +87,8 @@ export default function JFTMeeting() {
         </Link>
       </div>
     </div>
+    <ReadingFooter onPamflet />
+    </>
   );
 }
 
