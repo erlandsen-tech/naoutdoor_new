@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
+import Layout from "@/components/Layout";
 
 const SITE_URL = "https://na-outdoor.org";
 
@@ -85,5 +86,9 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  return children;
+  // Layout (Header + Footer + MobileTabBar) lives here — not in the root
+  // layout — so it re-renders whenever the [locale] segment changes. This
+  // is what makes client-side language switches work: the nav bar needs
+  // fresh translations + fresh locale-prefixed hrefs after a switch.
+  return <Layout>{children}</Layout>;
 }

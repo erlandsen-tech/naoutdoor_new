@@ -65,6 +65,10 @@ export default function LanguageSwitcher() {
   function switchTo(next: Locale) {
     setOpen(false);
     if (next === locale) return;
+    // Set NEXT_LOCALE cookie so middleware respects the new locale for any
+    // unprefixed navigation (e.g. a stray next/link href that isn't wrapped
+    // in the locale-aware Link component).
+    document.cookie = `NEXT_LOCALE=${next}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
     const bare = stripLocalePrefix(pathname);
     router.replace(buildLocaleHref(next, bare));
   }
