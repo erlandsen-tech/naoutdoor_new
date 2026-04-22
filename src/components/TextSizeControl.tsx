@@ -1,4 +1,5 @@
 "use client";
+
 import { useCallback, useEffect, useState } from "react";
 
 const SCALE_STEPS = [0.9, 1.0, 1.15, 1.3, 1.5, 1.75, 2.0] as const;
@@ -50,7 +51,7 @@ export default function TextSizeControl() {
 
   return (
     <div
-      className="fixed top-20 right-3 z-30 flex items-center gap-1 rounded-full border border-gray-300 bg-white/95 px-1 py-1 shadow-md dark:border-gray-700 dark:bg-gray-900/95"
+      className="flex items-center gap-0.5 rounded-full border border-espresso/15 bg-white/70 px-1 py-1 backdrop-blur-md shadow-[0_2px_8px_rgba(31,22,17,0.05)]"
       role="group"
       aria-label="Text size"
     >
@@ -59,12 +60,18 @@ export default function TextSizeControl() {
         onClick={() => update(index - 1)}
         disabled={atMin}
         aria-label="Decrease text size"
-        className="flex h-10 w-10 items-center justify-center rounded-full text-base font-semibold text-gray-800 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-100 dark:hover:bg-gray-800"
+        className="flex h-7 w-7 items-center justify-center rounded-full text-espresso transition-colors hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 sm:h-8 sm:w-8"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "13px",
+          fontWeight: 700,
+        }}
       >
         A−
       </button>
       <span
-        className="min-w-[3ch] text-center text-xs tabular-nums text-gray-600 dark:text-gray-300"
+        className="label min-w-[3ch] px-1 text-center text-espresso/60 tabular-nums"
+        style={{ fontSize: "9.5px", letterSpacing: "0.08em" }}
         aria-live="polite"
       >
         {percent}%
@@ -74,7 +81,12 @@ export default function TextSizeControl() {
         onClick={() => update(index + 1)}
         disabled={atMax}
         aria-label="Increase text size"
-        className="flex h-10 w-10 items-center justify-center rounded-full text-lg font-semibold text-gray-800 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-100 dark:hover:bg-gray-800"
+        className="flex h-7 w-7 items-center justify-center rounded-full text-espresso transition-colors hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 sm:h-8 sm:w-8"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "15px",
+          fontWeight: 700,
+        }}
       >
         A+
       </button>

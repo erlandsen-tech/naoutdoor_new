@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import ReadingFooter from "@/components/ReadingFooter";
 
 export default function SpeakerMeeting() {
   return (
+    <>
     <div>
       <div className="pam" id="pam-speaker">
         <div className="box-pam">
@@ -166,6 +168,8 @@ export default function SpeakerMeeting() {
         </Link>
       </div>
     </div>
+    <ReadingFooter onPamflet />
+    </>
   );
 }
 

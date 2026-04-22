@@ -1,98 +1,264 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
 
 export default function DonationsPage() {
   return (
-    <div className="w-full flex-1">
-      <section className="max-w-5xl mx-auto px-4 py-10">
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Donations</h1>
-          <p className="mt-3 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            In Narcotics Anonymous, our 7th Tradition states that every NA group ought to be fully
-            self-supporting, declining outside contributions. If you wish to support NA Outdoor,
-            you can donate using the options below. Thank you for helping us carry the message.
+    <div className="flex flex-1 flex-col">
+      {/* ── Header band ────────────────────────────── */}
+      <section
+        className="relative w-full bg-espresso text-cream"
+        style={{
+          padding: "clamp(40px, 7vw, 80px) clamp(22px, 5vw, 60px) clamp(30px, 5vw, 56px)",
+        }}
+      >
+        <div className="mx-auto max-w-3xl">
+          <div
+            className="label text-cream/70"
+            style={{ fontSize: "11px", letterSpacing: "0.28em", marginBottom: "8px" }}
+          >
+            7th Tradition
+          </div>
+          <h1
+            className="display"
+            style={{
+              fontSize: "var(--fs-display-l)",
+              lineHeight: "0.98",
+              letterSpacing: "-0.03em",
+              margin: 0,
+            }}
+          >
+            Donate.
+          </h1>
+          <p
+            className="mt-3 max-w-xl italic text-cream/90"
+            style={{
+              fontFamily: "var(--font-fraunces), serif",
+              fontSize: "var(--fs-body)",
+              lineHeight: "1.5",
+            }}
+          >
+            Every NA group ought to be fully self-supporting, declining outside
+            contributions.
           </p>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Vipps */}
-          <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6 flex items-center gap-5">
-            <div className="shrink-0">
-              <Image src="/img/pay_with_vipps.png" alt="Pay with Vipps" width={140} height={42} />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold">Vipps</h2>
-              <p className="text-gray-700 dark:text-gray-300">NA Outdoor</p>
-              <p className="mt-1 font-mono text-2xl">520065</p>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                Please include a note like “NA Outdoor donation” if possible.
-              </p>
-            </div>
-          </article>
-
-          {/* Cash at meetings */}
-          <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6 flex items-center gap-5">
-            <div className="shrink-0">
-              <Image src="/img/donation.png" alt="Donation icon" width={64} height={64} />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold">Cash at meetings</h2>
-              <p className="text-gray-700 dark:text-gray-300">
-                You can contribute in person at our meetings. Collections help cover venue costs,
-                literature, and outreach.
-              </p>
-            </div>
-          </article>
-
-          {/* Bank transfer (Norway) */}
-          <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6">
-            <h2 className="text-xl font-semibold">Bank transfer (Norway)</h2>
-            <p className="mt-2 text-gray-700 dark:text-gray-300">Konto</p>
-            <p className="font-mono text-2xl flex items-center gap-2">
-              15060727772
-              <CopyChip value="15060727772" />
-            </p>
-          </article>
-
-          {/* International contributions */}
-          <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6">
-            <h2 className="text-xl font-semibold">International contributions</h2>
-            <dl className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-700 dark:text-gray-300">
-              <div>
-                <dt className="text-sm">Account Name</dt>
-                <dd className="font-medium">NA Outdoor</dd>
-              </div>
-              <div>
-                <dt className="text-sm">DNB SWIFT</dt>
-                <dd className="font-mono flex items-center gap-2">
-                  <span>DNBANOKKXXX</span>
-                  <CopyChip value="DNBANOKKXXX" />
-                </dd>
-              </div>
-              <div className="sm:col-span-2">
-                <dt className="text-sm">IBAN</dt>
-                <dd className="font-mono flex items-center gap-2">
-                  <span>NO5215060727772</span>
-                  <CopyChip value="NO5215060727772" />
-                </dd>
-              </div>
-            </dl>
-            <div className="mt-4 text-sm text-gray-700 dark:text-gray-300">
-              <p>Anonyme Narkomane</p>
-              <p>Område Øst</p>
-              <p>Service Komite</p>
-              <p>Hummeldalsvegen 1</p>
-              <p>2406 Elverum</p>
-            </div>
-          </article>
         </div>
       </section>
+
+      <div
+        className="mx-auto w-full max-w-3xl"
+        style={{ padding: "clamp(20px, 3vw, 32px) clamp(16px, 3vw, 24px) 0" }}
+      >
+        {/* ── Vipps hero ───────────────────────────── */}
+        <article
+          className="rounded-[14px] text-white shadow-[var(--shadow-vipps)]"
+          style={{
+            background: "linear-gradient(135deg, #FF5B24 0%, #E04A15 100%)",
+            padding: "22px 22px 26px",
+          }}
+        >
+          <div className="flex items-center justify-between">
+            <div
+              className="label opacity-95"
+              style={{ fontSize: "11px", letterSpacing: "0.2em" }}
+            >
+              Fastest · Norway
+            </div>
+            <Image
+              src="/design/pay-with-vipps.png"
+              alt="Vipps"
+              width={100}
+              height={28}
+              className="h-7 w-auto"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </div>
+
+          <div
+            className="mt-5 italic opacity-90"
+            style={{
+              fontFamily: "var(--font-fraunces), serif",
+              fontSize: "var(--fs-body)",
+              marginBottom: "4px",
+            }}
+          >
+            Send to number
+          </div>
+          <div
+            className="label"
+            style={{
+              fontSize: "clamp(44px, 10vw, 72px)",
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              lineHeight: 1,
+            }}
+          >
+            520065
+          </div>
+
+          <CopyButton value="520065" label="Tap to copy number" dark />
+
+          <div
+            className="mt-4 italic opacity-95"
+            style={{
+              fontFamily: "var(--font-fraunces), serif",
+              fontSize: "var(--fs-body-s)",
+            }}
+          >
+            Add a note:{" "}
+            <span className="font-bold not-italic">
+              &ldquo;NA Outdoor donation&rdquo;
+            </span>
+          </div>
+        </article>
+
+        {/* ── Divider ──────────────────────────────── */}
+        <div
+          className="flex items-center gap-3"
+          style={{ padding: "26px 4px 10px" }}
+        >
+          <div className="h-px flex-1 bg-espresso/15" />
+          <span
+            className="label text-espresso/55"
+            style={{ fontSize: "10.5px", letterSpacing: "0.2em" }}
+          >
+            Other ways
+          </span>
+          <div className="h-px flex-1 bg-espresso/15" />
+        </div>
+
+        {/* ── Secondary methods ────────────────────── */}
+        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-4">
+          <SecondaryCard
+            label="Bank transfer · Norway"
+            value="1506 0727 772"
+            sub="Konto · Anonyme Narkomane"
+          />
+          <SecondaryCard
+            label="IBAN · International"
+            value="NO52 1506 0727 772"
+            sub="DNB SWIFT: DNBANOKKXXX"
+          />
+
+          {/* Cash card */}
+          <div
+            className="flex items-center gap-4 rounded-[12px] border-[1.5px] border-dashed border-espresso/20 md:col-span-2"
+            style={{ padding: "18px" }}
+          >
+            <div
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+              style={{ background: "rgba(31,22,17,0.06)" }}
+              aria-hidden
+            >
+              <span className="text-xl">💵</span>
+            </div>
+            <div className="flex-1">
+              <div
+                className="label text-espresso/55"
+                style={{ fontSize: "10px", letterSpacing: "0.22em" }}
+              >
+                Cash
+              </div>
+              <div
+                className="mt-1"
+                style={{
+                  fontFamily: "var(--font-fraunces), serif",
+                  fontSize: "var(--fs-body)",
+                  lineHeight: "1.4",
+                }}
+              >
+                Contribute at meetings in person.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Mailing address ──────────────────────── */}
+        <div className="mt-8 md:mt-10">
+          <div
+            className="label text-espresso/55"
+            style={{ fontSize: "10px", letterSpacing: "0.22em", marginBottom: "8px" }}
+          >
+            Mailing address
+          </div>
+          <address
+            className="not-italic italic text-ink"
+            style={{
+              fontFamily: "var(--font-fraunces), serif",
+              fontSize: "var(--fs-body-s)",
+              lineHeight: "1.55",
+              fontStyle: "italic",
+            }}
+          >
+            Anonyme Narkomane · Område Øst · Service Komite
+            <br />
+            Hummeldalsvegen 1, 2406 Elverum
+          </address>
+        </div>
+      </div>
     </div>
   );
 }
 
-function CopyChip({ value }: { value: string }) {
+function SecondaryCard({
+  label,
+  value,
+  sub,
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+}) {
+  return (
+    <div
+      className="rounded-[12px] border border-espresso/10 bg-white"
+      style={{ padding: "16px 18px" }}
+    >
+      <div
+        className="label text-espresso/55"
+        style={{ fontSize: "10px", letterSpacing: "0.22em" }}
+      >
+        {label}
+      </div>
+      <div className="mt-1.5 flex items-center gap-3">
+        <div
+          className="label flex-1 text-espresso"
+          style={{
+            fontSize: "clamp(18px, 3vw, 22px)",
+            fontWeight: 700,
+            letterSpacing: "0.05em",
+          }}
+        >
+          {value}
+        </div>
+        <CopyButton value={value.replace(/\s/g, "")} compact />
+      </div>
+      {sub && (
+        <div
+          className="mt-1 italic text-espresso/60"
+          style={{
+            fontFamily: "var(--font-fraunces), serif",
+            fontSize: "12.5px",
+          }}
+        >
+          {sub}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CopyButton({
+  value,
+  label = "Copy",
+  dark = false,
+  compact = false,
+}: {
+  value: string;
+  label?: string;
+  dark?: boolean;
+  compact?: boolean;
+}) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
   async function onCopy() {
     try {
@@ -101,25 +267,64 @@ function CopyChip({ value }: { value: string }) {
     } catch {
       setStatus("err");
     }
-    setTimeout(() => setStatus("idle"), 1500);
+    setTimeout(() => setStatus("idle"), 1800);
   }
-  const label = status === "ok" ? "Copied" : status === "err" ? "Copy failed" : "Copy";
-  const tone =
-    status === "ok"
-      ? "bg-green-600 text-white border-green-600"
-      : status === "err"
-      ? "bg-red-600 text-white border-red-600"
-      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700";
+
+  if (compact) {
+    const bg =
+      status === "ok"
+        ? "#16a34a"
+        : status === "err"
+          ? "#b91c1c"
+          : "var(--color-espresso)";
+    return (
+      <button
+        type="button"
+        onClick={onCopy}
+        aria-label={`Copy ${value}`}
+        className="label cursor-pointer rounded-[8px] text-cream transition-colors"
+        style={{
+          padding: "8px 14px",
+          minWidth: "76px",
+          fontSize: "12px",
+          letterSpacing: "0.14em",
+          background: bg,
+        }}
+      >
+        {status === "ok" ? "Copied" : status === "err" ? "Error" : "Copy"}
+      </button>
+    );
+  }
+
   return (
     <button
       type="button"
       onClick={onCopy}
       aria-label={`Copy ${value}`}
-      className={`px-2 py-0.5 text-xs rounded border ${tone}`}
+      className="label mt-3 flex w-full cursor-pointer items-center justify-center gap-2 rounded-[10px] transition-colors"
+      style={{
+        padding: "12px 14px",
+        border: dark
+          ? "1.5px solid rgba(255,255,255,0.35)"
+          : "1.5px solid var(--color-espresso)",
+        background:
+          status === "ok"
+            ? "rgba(22,163,74,0.9)"
+            : dark
+              ? "rgba(255,255,255,0.15)"
+              : "transparent",
+        color: dark ? "#fff" : "var(--color-espresso)",
+        fontSize: "12px",
+        letterSpacing: "0.16em",
+      }}
     >
-      {label}
+      <span>
+        {status === "ok"
+          ? "Copied to clipboard"
+          : status === "err"
+            ? "Couldn't copy"
+            : label}
+      </span>
     </button>
   );
 }
-
-
