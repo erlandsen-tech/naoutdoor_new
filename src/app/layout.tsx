@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Archivo_Narrow } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import "./globals.css";
 
@@ -36,8 +35,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://na-outdoor.org"),
   applicationName: "NA Outdoor",
   authors: [{ name: "NA Outdoor" }],
-  // icon.png, apple-icon.png, and favicon.ico colocated in app/ are
-  // auto-wired by Next's file-based metadata conventions.
 };
 
 export default async function RootLayout({
@@ -45,11 +42,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // NextIntlClientProvider lives in [locale]/layout.tsx with an explicit
+  // `locale` prop so it re-runs on locale change. This root layout is
+  // a minimal HTML shell. `locale` on <html> is the initial-render fallback;
+  // the lang attribute is also synced client-side via HtmlLangSetter below.
   const locale = await getLocale();
   return (
     <html lang={locale}>
       <body className={`${fraunces.variable} ${archivoNarrow.variable} antialiased`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

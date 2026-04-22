@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import Layout from "@/components/Layout";
+import HtmlLangSetter from "@/components/HtmlLangSetter";
 
 const SITE_URL = "https://na-outdoor.org";
 
@@ -86,9 +88,17 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  // Layout (Header + Footer + MobileTabBar) lives here — not in the root
-  // layout — so it re-renders whenever the [locale] segment changes. This
-  // is what makes client-side language switches work: the nav bar needs
-  // fresh translations + fresh locale-prefixed hrefs after a switch.
-  return <Layout>{children}</Layout>;
+  // Load the full message bundle for this locale. Providing `locale` + `messages`
+  // explicitly means the client provider updates on client-side nav between
+  // locales — without the props it caches the initial server-resolved locale
+  // and never refreshes, which is why nav and switcher reverted to the old
+  // locale when clicking around.
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <HtmlLangSetter locale={locale} />
+      <Layout>{children}</Layout>
+    </NextIntlClientProvider>
+  );
 }
