@@ -1,36 +1,56 @@
 {
   "meta": {
     "title": "NA Outdoor",
-    "description": "Created in loving service for NA Outdoor by its members <3"
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Natur & Återhämtning",
+    "description": "En gemenskap av medlemmar i Anonyma Narkomaner i Norge som finner styrka, gemenskap och glädje i naturen. Två årliga samlingar i Trysil — Ski & Recovery (vinter) och Bike 2 Basic (sensommar).",
+    "ogTitle": "NA Outdoor — Natur & Återhämtning",
+    "ogDescription": "Två årliga NA-samlingar i Trysil, Norge. Ski & Recovery (vinter) · Bike 2 Basic (sensommar)."
   },
   "nav": {
     "brand": "NA Outdoor",
-    "home": "Home",
+    "brandAria": "NA Outdoor — start",
+    "brandTagline": "Trysil · Norge",
+    "primaryNav": "Huvudmeny",
+    "primaryNavMobile": "Huvudmeny mobil",
+    "skipToContent": "Hoppa till innehåll",
+    "toggleMenu": "Meny",
+    "home": "Start",
+    "homeShort": "Start",
     "ski": "Ski & Recovery",
     "skiShort": "Ski",
     "bike": "Bike 2 Basic",
     "bikeShort": "Bike",
-    "readings": "Readings",
-    "donate": "Donate",
-    "toggleMenu": "Toggle menu",
-    "skipToContent": "Skip to content"
+    "readings": "Litteratur",
+    "readingsShort": "Litt.",
+    "donate": "Bidra",
+    "donateShort": "Bidra"
   },
   "home": {
-    "logoAlt": "NA Outdoor Trysil logo",
-    "intro1": "NA Outdoor is a fellowship of members within Narcotics Anonymous Norway who find strength, connection, and joy through nature. We host two annual events in Trysil, Norway — where the power of the outdoors meets the spirit of recovery.",
-    "intro2Before": "Our signature gatherings, ",
-    "intro2SkiEvent": "Ski & Recovery",
-    "intro2Middle": " in winter and ",
-    "intro2BikeEvent": "Bike to Basic",
-    "intro2After": " in late summer, offer days filled with mountain adventures, community, and personal growth.",
-    "intro3": "These events are made possible through the 7th Tradition — supported solely by voluntary contributions from members."
+    "heroEyebrow": "Anonyma Narkomaner · Trysil, Norge",
+    "heroIntro": "Vi finner styrka genom",
+    "heroNature": "Natur",
+    "heroAndRecovery": "& Återhämtning",
+    "nextUp": "Nästa",
+    "aboutEyebrow": "Om oss",
+    "about": "NA Outdoor är en gemenskap av medlemmar i Anonyma Narkomaner Norge som finner styrka, gemenskap och glädje i naturen.",
+    "aboutTail": "Möjliggjort genom den sjunde traditionen — bärs enbart av frivilliga bidrag från medlemmarna.",
+    "eventsSectionHidden": "Årliga evenemang"
   },
   "readings": {
-    "title": "Readings",
-    "speakerMeetingFormat": "Speaker meeting format",
-    "jftSpadFormat": "JFT & SPAD meeting format",
-    "pickLanguage": "Pick a language",
-    "backToHome": "Back to home"
+    "eyebrow": "Litteratur & format",
+    "title": "Litteratur.",
+    "subtitle": "Mötesformat och grundläggande NA-litteratur, tillgänglig på åtta språk.",
+    "meetingFormatHeader": "Mötesformat",
+    "literatureHeader": "Litteratur",
+    "otherLanguagesHeader": "Andra språk",
+    "openCta": "Öppna",
+    "speakerEyebrow": "Öppet möte",
+    "speakerTitle": "Speaker-format",
+    "speakerBody": "Det klassiska NA-speakermötets öppnings- och avslutningsskript.",
+    "jftEyebrow": "Daglig läsning",
+    "jftTitle": "JFT & SPAD-format",
+    "jftBody": "För Just for Today- och Spiritual Principle a Day-möten."
   },
   "languages": {
     "en": "English",
@@ -43,9 +63,12 @@
     "fi": "Suomi"
   },
   "common": {
-    "back": "Back",
-    "copy": "Copy",
-    "copied": "Copied",
-    "copyFailed": "Copy failed"
+    "back": "Tillbaka",
+    "backToReadings": "Tillbaka till litteratur",
+    "copy": "Kopiera",
+    "copied": "Kopierad",
+    "copyFailed": "Kopiering misslyckades",
+    "copiedToClipboard": "Kopierad till urklipp",
+    "couldNotCopy": "Kunde inte kopiera"
   }
 }

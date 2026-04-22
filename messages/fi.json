@@ -1,36 +1,56 @@
 {
   "meta": {
     "title": "NA Outdoor",
-    "description": "Created in loving service for NA Outdoor by its members <3"
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Luonto & Toipuminen",
+    "description": "Nimettömien Narkomaanien jäsenten yhteisö Norjassa, joka löytää voimaa, yhteyttä ja iloa luonnosta. Kaksi vuosittaista tapahtumaa Trysilissä — Ski & Recovery (talvi) ja Bike 2 Basic (loppukesä).",
+    "ogTitle": "NA Outdoor — Luonto & Toipuminen",
+    "ogDescription": "Kaksi vuosittaista NA-tapahtumaa Trysilissä, Norjassa. Ski & Recovery (talvi) · Bike 2 Basic (loppukesä)."
   },
   "nav": {
     "brand": "NA Outdoor",
-    "home": "Home",
+    "brandAria": "NA Outdoor — etusivu",
+    "brandTagline": "Trysil · Norja",
+    "primaryNav": "Päävalikko",
+    "primaryNavMobile": "Päävalikko mobiili",
+    "skipToContent": "Siirry sisältöön",
+    "toggleMenu": "Valikko",
+    "home": "Etusivu",
+    "homeShort": "Etu",
     "ski": "Ski & Recovery",
     "skiShort": "Ski",
     "bike": "Bike 2 Basic",
     "bikeShort": "Bike",
-    "readings": "Readings",
-    "donate": "Donate",
-    "toggleMenu": "Toggle menu",
-    "skipToContent": "Skip to content"
+    "readings": "Kirjallisuus",
+    "readingsShort": "Kirj.",
+    "donate": "Lahjoita",
+    "donateShort": "Lahj."
   },
   "home": {
-    "logoAlt": "NA Outdoor Trysil logo",
-    "intro1": "NA Outdoor is a fellowship of members within Narcotics Anonymous Norway who find strength, connection, and joy through nature. We host two annual events in Trysil, Norway — where the power of the outdoors meets the spirit of recovery.",
-    "intro2Before": "Our signature gatherings, ",
-    "intro2SkiEvent": "Ski & Recovery",
-    "intro2Middle": " in winter and ",
-    "intro2BikeEvent": "Bike to Basic",
-    "intro2After": " in late summer, offer days filled with mountain adventures, community, and personal growth.",
-    "intro3": "These events are made possible through the 7th Tradition — supported solely by voluntary contributions from members."
+    "heroEyebrow": "Nimettömät Narkomaanit · Trysil, Norja",
+    "heroIntro": "Löydämme voimaa",
+    "heroNature": "Luonnosta",
+    "heroAndRecovery": "& Toipumisesta",
+    "nextUp": "Seuraava",
+    "aboutEyebrow": "Meistä",
+    "about": "NA Outdoor on yhteisö Nimettömien Narkomaanien Norjan jäsenistä, jotka löytävät voimaa, yhteyttä ja iloa luonnosta.",
+    "aboutTail": "Mahdollistettu seitsemännen perinteen kautta — perustuu yksinomaan jäsenten vapaaehtoisiin lahjoituksiin.",
+    "eventsSectionHidden": "Vuosittaiset tapahtumat"
   },
   "readings": {
-    "title": "Readings",
-    "speakerMeetingFormat": "Speaker meeting format",
-    "jftSpadFormat": "JFT & SPAD meeting format",
-    "pickLanguage": "Pick a language",
-    "backToHome": "Back to home"
+    "eyebrow": "Kirjallisuus & formaatit",
+    "title": "Kirjallisuus.",
+    "subtitle": "Kokousformaatit ja perus-NA-kirjallisuus, saatavilla kahdeksalla kielellä.",
+    "meetingFormatHeader": "Kokousformaatti",
+    "literatureHeader": "Kirjallisuus",
+    "otherLanguagesHeader": "Muut kielet",
+    "openCta": "Avaa",
+    "speakerEyebrow": "Avoin kokous",
+    "speakerTitle": "Speaker-formaatti",
+    "speakerBody": "Klassisen NA-speaker-kokouksen avaus- ja päätösskripti.",
+    "jftEyebrow": "Päivittäinen luku",
+    "jftTitle": "JFT & SPAD-formaatti",
+    "jftBody": "Just for Today- ja Spiritual Principle a Day -kokouksiin."
   },
   "languages": {
     "en": "English",
@@ -43,9 +63,12 @@
     "fi": "Suomi"
   },
   "common": {
-    "back": "Back",
-    "copy": "Copy",
-    "copied": "Copied",
-    "copyFailed": "Copy failed"
+    "back": "Takaisin",
+    "backToReadings": "Takaisin kirjallisuuteen",
+    "copy": "Kopioi",
+    "copied": "Kopioitu",
+    "copyFailed": "Kopiointi epäonnistui",
+    "copiedToClipboard": "Kopioitu leikepöydälle",
+    "couldNotCopy": "Kopiointi ei onnistunut"
   }
 }

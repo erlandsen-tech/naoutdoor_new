@@ -1,12 +1,28 @@
-import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
 import { getUpcomingEvents, type EventInstance } from "@/lib/events";
 
 // Revalidate hourly so the "next up" event stays accurate as dates roll over
 // without needing a redeploy.
 export const revalidate = 3600;
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as Locale)) notFound();
+  setRequestLocale(locale);
+
+  const [t, tNav] = await Promise.all([
+    getTranslations({ locale, namespace: "home" }),
+    getTranslations({ locale, namespace: "nav" }),
+  ]);
+
   const { primary, secondary } = getUpcomingEvents();
 
   return (
@@ -53,7 +69,7 @@ export default function Home() {
               paddingBottom: "4px",
             }}
           >
-            Narcotics Anonymous · Trysil, Norway
+            {t("heroEyebrow")}
           </span>
         </div>
 
@@ -66,7 +82,7 @@ export default function Home() {
               letterSpacing: "0.28em",
             }}
           >
-            We find strength through
+            {t("heroIntro")}
           </div>
           <h1
             className="display-italic"
@@ -77,7 +93,7 @@ export default function Home() {
               margin: 0,
             }}
           >
-            Nature
+            {t("heroNature")}
           </h1>
           <h2
             className="display"
@@ -88,18 +104,18 @@ export default function Home() {
               margin: "2px 0 20px",
             }}
           >
-            &amp; Recovery
+            {t("heroAndRecovery")}
           </h2>
-          <NextUpStrip event={primary} />
+          <NextUpStrip event={primary} nextLabel={t("nextUp")} />
         </div>
       </section>
 
       {/* ── Event cards — primary (next) first, secondary second ─ */}
       <section className="mx-auto w-full max-w-4xl px-4 pt-7 sm:px-6 md:pt-12">
-        <h2 className="visually-hidden">Annual events</h2>
+        <h2 className="visually-hidden">{t("eventsSectionHidden")}</h2>
         <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-          <EventCard event={primary} featured />
-          <EventCard event={secondary} />
+          <EventCard event={primary} featured nextUpLabel={t("nextUp")} />
+          <EventCard event={secondary} nextUpLabel={t("nextUp")} />
         </div>
       </section>
 
@@ -109,7 +125,7 @@ export default function Home() {
           className="label mb-3 text-sunset"
           style={{ fontSize: "11px", letterSpacing: "0.28em" }}
         >
-          About us
+          {t("aboutEyebrow")}
         </div>
         <p
           className="mx-auto max-w-xl text-ink"
@@ -119,8 +135,7 @@ export default function Home() {
             lineHeight: "1.55",
           }}
         >
-          NA Outdoor is a fellowship of members within Narcotics Anonymous
-          Norway who find strength, connection, and joy through nature.
+          {t("about")}
         </p>
         <p
           className="mx-auto mt-4 max-w-lg italic text-ink/70"
@@ -130,8 +145,7 @@ export default function Home() {
             lineHeight: "1.55",
           }}
         >
-          Made possible by the 7th Tradition — supported solely by voluntary
-          contributions from our members.
+          {t("aboutTail")}
         </p>
       </section>
 
@@ -143,14 +157,14 @@ export default function Home() {
             className="label flex items-center justify-center rounded-[10px] border-[1.5px] border-espresso px-4 py-4 text-espresso transition-colors hover:bg-espresso hover:text-cream"
             style={{ fontSize: "13px", letterSpacing: "0.18em" }}
           >
-            Readings
+            {tNav("readings")}
           </Link>
           <Link
             href="/donations"
             className="label flex items-center justify-center rounded-[10px] bg-espresso px-4 py-4 text-cream transition-all hover:bg-[#2d1f15] hover:shadow-lg"
             style={{ fontSize: "13px", letterSpacing: "0.18em" }}
           >
-            Donate
+            {tNav("donate")}
           </Link>
         </div>
       </section>
@@ -158,7 +172,13 @@ export default function Home() {
   );
 }
 
-function NextUpStrip({ event }: { event: EventInstance }) {
+function NextUpStrip({
+  event,
+  nextLabel,
+}: {
+  event: EventInstance;
+  nextLabel: string;
+}) {
   return (
     <div
       className="label opacity-95"
@@ -167,7 +187,7 @@ function NextUpStrip({ event }: { event: EventInstance }) {
         letterSpacing: "0.22em",
       }}
     >
-      ─── Next:&nbsp;{event.title}&nbsp;·&nbsp;{event.dateLabel}&nbsp;───
+      ─── {nextLabel}:&nbsp;{event.title}&nbsp;·&nbsp;{event.dateLabel}&nbsp;───
     </div>
   );
 }
@@ -175,9 +195,11 @@ function NextUpStrip({ event }: { event: EventInstance }) {
 function EventCard({
   event,
   featured = false,
+  nextUpLabel,
 }: {
   event: EventInstance;
   featured?: boolean;
+  nextUpLabel: string;
 }) {
   return (
     <Link
@@ -203,7 +225,7 @@ function EventCard({
           marginBottom: "4px",
         }}
       >
-        {featured ? "Next up · " : ""}
+        {featured ? `${nextUpLabel} · ` : ""}
         {event.season} · {event.location}
       </div>
       <div

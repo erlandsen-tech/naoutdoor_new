@@ -1,7 +1,14 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { NAV_ITEMS } from "./navConfig";
 
 export default function Footer() {
+  const t = useTranslations("nav");
+  const tFooter = useTranslations("home");
+  const locale = useLocale();
+
   return (
     <footer
       className="hidden md:block border-t border-espresso/10 mt-20"
@@ -13,18 +20,16 @@ export default function Footer() {
             className="label text-[11px] text-sunset"
             style={{ letterSpacing: "0.22em" }}
           >
-            NA Outdoor
+            {t("brand")}
           </div>
           <p className="mt-3 max-w-sm text-[15px] leading-[1.55] text-ink/80">
-            A fellowship of Narcotics Anonymous members in Norway who find
-            strength, connection, and joy through nature.
+            {tFooter("about")}
           </p>
           <p
             className="mt-4 max-w-sm text-[13px] italic leading-[1.5] text-ink/55"
             style={{ fontFamily: "var(--font-fraunces), serif" }}
           >
-            Made possible by the 7th Tradition — supported solely by voluntary
-            contributions from our members.
+            {tFooter("aboutTail")}
           </p>
         </div>
 
@@ -33,16 +38,17 @@ export default function Footer() {
             className="label text-[10px] text-ink/55"
             style={{ letterSpacing: "0.22em" }}
           >
-            Navigate
+            {t("primaryNav")}
           </div>
           <ul className="mt-3 space-y-2">
             {NAV_ITEMS.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
+                  locale={locale}
                   className="text-[15px] text-espresso hover:text-sunset transition-colors"
                 >
-                  {item.label}
+                  {t(item.id)}
                 </Link>
               </li>
             ))}
@@ -72,8 +78,8 @@ export default function Footer() {
           className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between label text-[10px] text-ink/50"
           style={{ letterSpacing: "0.22em" }}
         >
-          <span>© {new Date().getFullYear()} · NA Outdoor</span>
-          <span>Trysil · Norway</span>
+          <span>© {new Date().getFullYear()} · {t("brand")}</span>
+          <span>{t("brandTagline")}</span>
         </div>
       </div>
     </footer>

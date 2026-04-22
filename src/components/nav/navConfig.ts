@@ -1,50 +1,61 @@
 export type NavItem = {
-  id: string;
-  label: string;
-  shortLabel: string;
+  id: "home" | "ski" | "bike" | "readings" | "donate";
   href: string;
 };
 
+// Labels come from messages/*.json under the `nav` namespace:
+//   nav.home, nav.homeShort, nav.ski, nav.skiShort, etc.
+// The href values are always the default-locale path; the <Link> component
+// from next-intl's navigation helpers will add the locale prefix per request.
 export const NAV_ITEMS: NavItem[] = [
-  { id: "home", label: "Home", shortLabel: "Home", href: "/" },
-  { id: "ski", label: "Ski & Recovery", shortLabel: "Ski", href: "/ski-and-recovery" },
-  { id: "bike", label: "Bike 2 Basic", shortLabel: "Bike", href: "/bike-2-basic" },
-  { id: "readings", label: "Readings", shortLabel: "Readings", href: "/readings" },
-  { id: "donate", label: "Donate", shortLabel: "Donate", href: "/donations" },
+  { id: "home", href: "/" },
+  { id: "ski", href: "/ski-and-recovery" },
+  { id: "bike", href: "/bike-2-basic" },
+  { id: "readings", href: "/readings" },
+  { id: "donate", href: "/donations" },
 ];
 
-const LANGUAGE_PREFIX_RE =
-  /^\/(english|norwegian|swedish|danish|dutch|german|french|finnish)(\/|$)/;
-
-/**
- * True on routes that display long-form readable content (pamflet pages,
- * speaker/JFT meeting formats). These are the pages where the text-size
- * control in the header is meaningful. The /readings hub itself and the
- * per-language menus are excluded — they have no resizable prose.
- */
 export function hasReadableText(pathname: string | null): boolean {
   if (!pathname) return false;
-  if (pathname === "/speaker-meeting" || pathname === "/jft-meeting") {
+
+  const stripped = stripLocalePrefix(pathname);
+
+  if (stripped === "/speaker-meeting" || stripped === "/jft-meeting") {
     return true;
   }
-  // /{lang}/{slug} — 2+ segments under a language
-  const m = pathname.match(LANGUAGE_PREFIX_RE);
-  if (!m) return false;
-  return pathname.split("/").filter(Boolean).length >= 2;
+  // /readings/:slug — pamphlet pages (2+ segments under readings)
+  if (stripped.startsWith("/readings/")) {
+    return true;
+  }
+  return false;
 }
 
-export function activeId(pathname: string | null): string {
-  if (!pathname || pathname === "/") return "home";
-  if (pathname.startsWith("/ski-and-recovery")) return "ski";
-  if (pathname.startsWith("/bike-2-basic")) return "bike";
-  if (pathname.startsWith("/donations")) return "donate";
+export function activeId(pathname: string | null): NavItem["id"] | "" {
+  if (!pathname) return "";
+
+  const stripped = stripLocalePrefix(pathname);
+
+  if (stripped === "/" || stripped === "") return "home";
+  if (stripped.startsWith("/ski-and-recovery")) return "ski";
+  if (stripped.startsWith("/bike-2-basic")) return "bike";
+  if (stripped.startsWith("/donations")) return "donate";
   if (
-    pathname.startsWith("/readings") ||
-    pathname.startsWith("/speaker-meeting") ||
-    pathname.startsWith("/jft-meeting") ||
-    /^\/(english|norwegian|swedish|danish|dutch|german|french|finnish)/.test(pathname)
+    stripped.startsWith("/readings") ||
+    stripped.startsWith("/speaker-meeting") ||
+    stripped.startsWith("/jft-meeting")
   ) {
     return "readings";
   }
   return "";
+}
+
+// Strip a /{locale}/ prefix so the rest of the matching logic works against
+// pathless-of-locale URLs. Locale codes are the 2-letter ISO codes we support.
+const LOCALE_CODES = ["nb", "sv", "da", "nl", "de", "fr", "fi"]; // en has no prefix
+function stripLocalePrefix(pathname: string): string {
+  for (const code of LOCALE_CODES) {
+    if (pathname === `/${code}`) return "/";
+    if (pathname.startsWith(`/${code}/`)) return pathname.slice(`/${code}`.length);
+  }
+  return pathname;
 }

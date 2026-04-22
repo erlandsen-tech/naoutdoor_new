@@ -1,36 +1,56 @@
 {
   "meta": {
     "title": "NA Outdoor",
-    "description": "Created in loving service for NA Outdoor by its members <3"
+    "titleTemplate": "%s · NA Outdoor",
+    "defaultTitle": "NA Outdoor — Natuur & Herstel",
+    "description": "Een gemeenschap van leden van Narcotics Anonymous in Noorwegen die in de natuur kracht, verbinding en vreugde vinden. Twee jaarlijkse bijeenkomsten in Trysil — Ski & Recovery (winter) en Bike 2 Basic (nazomer).",
+    "ogTitle": "NA Outdoor — Natuur & Herstel",
+    "ogDescription": "Twee jaarlijkse NA-bijeenkomsten in Trysil, Noorwegen. Ski & Recovery (winter) · Bike 2 Basic (nazomer)."
   },
   "nav": {
     "brand": "NA Outdoor",
+    "brandAria": "NA Outdoor — home",
+    "brandTagline": "Trysil · Noorwegen",
+    "primaryNav": "Hoofdmenu",
+    "primaryNavMobile": "Hoofdmenu mobiel",
+    "skipToContent": "Naar inhoud",
+    "toggleMenu": "Menu",
     "home": "Home",
+    "homeShort": "Home",
     "ski": "Ski & Recovery",
     "skiShort": "Ski",
     "bike": "Bike 2 Basic",
     "bikeShort": "Bike",
-    "readings": "Readings",
-    "donate": "Donate",
-    "toggleMenu": "Toggle menu",
-    "skipToContent": "Skip to content"
+    "readings": "Literatuur",
+    "readingsShort": "Lit.",
+    "donate": "Doneren",
+    "donateShort": "Doneren"
   },
   "home": {
-    "logoAlt": "NA Outdoor Trysil logo",
-    "intro1": "NA Outdoor is a fellowship of members within Narcotics Anonymous Norway who find strength, connection, and joy through nature. We host two annual events in Trysil, Norway — where the power of the outdoors meets the spirit of recovery.",
-    "intro2Before": "Our signature gatherings, ",
-    "intro2SkiEvent": "Ski & Recovery",
-    "intro2Middle": " in winter and ",
-    "intro2BikeEvent": "Bike to Basic",
-    "intro2After": " in late summer, offer days filled with mountain adventures, community, and personal growth.",
-    "intro3": "These events are made possible through the 7th Tradition — supported solely by voluntary contributions from members."
+    "heroEyebrow": "Narcotics Anonymous · Trysil, Noorwegen",
+    "heroIntro": "Wij vinden kracht door",
+    "heroNature": "Natuur",
+    "heroAndRecovery": "& Herstel",
+    "nextUp": "Volgende",
+    "aboutEyebrow": "Over ons",
+    "about": "NA Outdoor is een gemeenschap van leden van Narcotics Anonymous Noorwegen die in de natuur kracht, verbinding en vreugde vinden.",
+    "aboutTail": "Mogelijk gemaakt door de Zevende Traditie — uitsluitend gedragen door vrijwillige bijdragen van onze leden.",
+    "eventsSectionHidden": "Jaarlijkse evenementen"
   },
   "readings": {
-    "title": "Readings",
-    "speakerMeetingFormat": "Speaker meeting format",
-    "jftSpadFormat": "JFT & SPAD meeting format",
-    "pickLanguage": "Pick a language",
-    "backToHome": "Back to home"
+    "eyebrow": "Literatuur & formats",
+    "title": "Literatuur.",
+    "subtitle": "Meetingformats en fundamentele NA-literatuur, beschikbaar in acht talen.",
+    "meetingFormatHeader": "Meetingformat",
+    "literatureHeader": "Literatuur",
+    "otherLanguagesHeader": "Andere talen",
+    "openCta": "Openen",
+    "speakerEyebrow": "Open meeting",
+    "speakerTitle": "Speaker-format",
+    "speakerBody": "Het klassieke openings- en slotscript van een NA-speakermeeting.",
+    "jftEyebrow": "Dagelijkse lezing",
+    "jftTitle": "JFT & SPAD-format",
+    "jftBody": "Voor Just for Today- en Spiritual Principle a Day-meetings."
   },
   "languages": {
     "en": "English",
@@ -43,9 +63,12 @@
     "fi": "Suomi"
   },
   "common": {
-    "back": "Back",
-    "copy": "Copy",
-    "copied": "Copied",
-    "copyFailed": "Copy failed"
+    "back": "Terug",
+    "backToReadings": "Terug naar literatuur",
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd",
+    "copyFailed": "Kopiëren mislukt",
+    "copiedToClipboard": "Naar klembord gekopieerd",
+    "couldNotCopy": "Kopiëren mislukt"
   }
 }
