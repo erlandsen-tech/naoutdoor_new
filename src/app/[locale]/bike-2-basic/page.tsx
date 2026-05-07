@@ -11,12 +11,12 @@ export default function Bike2Basic() {
         style={{ minHeight: "clamp(340px, 52svh, 520px)" }}
       >
         <Image
-          src="/design/b2b-flyer.jpg"
+          src="/design/b2b-flyer-2026.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[center_45%]"
         />
         <div
           aria-hidden
@@ -31,7 +31,7 @@ export default function Bike2Basic() {
             className="label mb-3"
             style={{ fontSize: "11px", letterSpacing: "0.3em", opacity: 0.9 }}
           >
-            Summer · Trysil · Aug 29–31, 2026
+            Summer · Trysil · Aug 28–30, 2026
           </div>
           <h1
             className="display"
@@ -58,7 +58,13 @@ export default function Bike2Basic() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-4 pt-10 sm:px-6">
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+        <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+          <SubPageCard
+            href="/bike-2-basic/program"
+            eyebrow="Schedule"
+            title="View the program"
+            body="Meetings, rides, and gatherings across the August weekend."
+          />
           <SubPageCard
             href="/bike-2-basic/bike-trail-map"
             eyebrow="On two wheels"
@@ -75,8 +81,8 @@ export default function Bike2Basic() {
 
         <div className="mt-10 md:mt-14">
           <ClickableFlyer
-            src="/design/b2b-flyer.jpg"
-            alt="Bike 2 Basic — Trysil summer flyer"
+            src="/design/b2b-flyer-2026.png"
+            alt="Bike 2 Basic 2026 — Trysil, August 28–30"
             maxWidth="680px"
           />
         </div>

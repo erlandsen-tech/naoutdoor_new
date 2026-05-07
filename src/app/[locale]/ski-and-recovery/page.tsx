@@ -76,7 +76,7 @@ export default function SkiAndRecovery() {
         {/* 2027 flyer — click to open fullscreen lightbox */}
         <div className="mt-10 md:mt-14">
           <ClickableFlyer
-            src="/design/ski-flyer-2027.jpg"
+            src="/design/ski-flyer-2027.png"
             alt="NA Outdoor — Ski & Recovery Trysil, March 8–13 2027 (21 years)"
             maxWidth="680px"
           />

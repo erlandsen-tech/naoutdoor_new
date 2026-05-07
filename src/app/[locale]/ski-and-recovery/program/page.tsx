@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "lucide-react";
 import ClickableFlyer from "@/components/ClickableFlyer";
 
@@ -22,7 +22,7 @@ export default function Program() {
             className="label text-sunset"
             style={{ fontSize: "10.5px", letterSpacing: "0.28em" }}
           >
-            Program · 2026
+            Program · 2027
           </div>
           <h1
             className="display mt-2"
@@ -39,8 +39,8 @@ export default function Program() {
       </div>
 
       <ClickableFlyer
-        src="/sr_program.png"
-        alt="Ski & Recovery Program 2026 - Trysil"
+        src="/sr-program-2027.png"
+        alt="Ski & Recovery Program 2027 - Trysil"
         maxWidth="820px"
         width={800}
         height={1200}

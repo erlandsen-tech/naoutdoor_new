@@ -26,6 +26,7 @@ const LOCALE_ROUTES = [
   "/ski-and-recovery/program",
   "/ski-and-recovery/ski-trail-map",
   "/bike-2-basic",
+  "/bike-2-basic/program",
   "/bike-2-basic/hiking-map",
   "/bike-2-basic/bike-trail-map",
 ];
