@@ -37,6 +37,28 @@
     "aboutTail": "Mahdollistettu seitsemännen perinteen kautta — perustuu yksinomaan jäsenten vapaaehtoisiin lahjoituksiin.",
     "eventsSectionHidden": "Vuosittaiset tapahtumat"
   },
+  "ski": {
+    "heroEyebrow": "Talvi · Trysil · 8.–13.3.2027",
+    "heroTitle": "Ski & Recovery",
+    "heroTagline": "Norjan pitkäikäisin vuosittainen NA-tapahtuma.",
+    "openCta": "Avaa",
+    "programCard": {
+      "eyebrow": "Ohjelma",
+      "title": "Katso ohjelma",
+      "body": "Viikon päivät, työpajat, kokoukset ja yhteinen aika."
+    },
+    "trailMapCard": {
+      "eyebrow": "Tunturissa",
+      "title": "Rinnekartta",
+      "body": "Selaa ja zoomaa Trysilin uusinta rinnekarttaa."
+    },
+    "trysilCard": {
+      "eyebrow": "Suunnittele majoitus",
+      "title": "Majoitus, hissit ja mitä kylässä on auki",
+      "body": "Trysilin virallinen sivusto pitää palvelut, aukioloajat ja matkatiedot ajan tasalla — linkitämme sinne sen sijaan, että toistaisimme tiedot täällä.",
+      "cta": "Käy trysil.com"
+    }
+  },
   "readings": {
     "eyebrow": "Kirjallisuus & formaatit",
     "title": "Kirjallisuus.",

@@ -37,6 +37,28 @@
     "aboutTail": "Made possible by the 7th Tradition — supported solely by voluntary contributions from our members.",
     "eventsSectionHidden": "Annual events"
   },
+  "ski": {
+    "heroEyebrow": "Winter · Trysil · Mar 8–13, 2027",
+    "heroTitle": "Ski & Recovery",
+    "heroTagline": "Norway's longest-running annual NA event.",
+    "openCta": "Open",
+    "programCard": {
+      "eyebrow": "Schedule",
+      "title": "View the program",
+      "body": "Days, workshops, meetings, and social gatherings for the week."
+    },
+    "trailMapCard": {
+      "eyebrow": "On the mountain",
+      "title": "Ski trail map",
+      "body": "Browse and zoom into the latest Trysil piste map."
+    },
+    "trysilCard": {
+      "eyebrow": "Plan your stay",
+      "title": "Lodging, lifts & what's open in town",
+      "body": "The official Trysil site keeps amenities, opening hours, and travel info up to date — we link there instead of duplicating it here.",
+      "cta": "Visit trysil.com"
+    }
+  },
   "readings": {
     "eyebrow": "Readings & formats",
     "title": "Readings.",

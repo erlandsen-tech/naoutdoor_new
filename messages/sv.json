@@ -37,6 +37,28 @@
     "aboutTail": "Möjliggjort genom den sjunde traditionen — bärs enbart av frivilliga bidrag från medlemmarna.",
     "eventsSectionHidden": "Årliga evenemang"
   },
+  "ski": {
+    "heroEyebrow": "Vinter · Trysil · 8–13 mars 2027",
+    "heroTitle": "Ski & Recovery",
+    "heroTagline": "Norges äldsta årliga NA-träff.",
+    "openCta": "Öppna",
+    "programCard": {
+      "eyebrow": "Program",
+      "title": "Se programmet",
+      "body": "Dagar, workshops, möten och sociala samlingar under veckan."
+    },
+    "trailMapCard": {
+      "eyebrow": "I backen",
+      "title": "Pistkarta",
+      "body": "Bläddra och zooma i den senaste pistkartan för Trysil."
+    },
+    "trysilCard": {
+      "eyebrow": "Planera vistelsen",
+      "title": "Boende, liftar och vad som är öppet i byn",
+      "body": "Trysils officiella webbplats håller faciliteter, öppettider och reseinformation uppdaterade — vi länkar dit istället för att duplicera det här.",
+      "cta": "Besök trysil.com"
+    }
+  },
   "readings": {
     "eyebrow": "Litteratur & format",
     "title": "Litteratur.",

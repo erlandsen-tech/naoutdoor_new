@@ -37,6 +37,28 @@
     "aboutTail": "Mogelijk gemaakt door de Zevende Traditie — uitsluitend gedragen door vrijwillige bijdragen van onze leden.",
     "eventsSectionHidden": "Jaarlijkse evenementen"
   },
+  "ski": {
+    "heroEyebrow": "Winter · Trysil · 8–13 maart 2027",
+    "heroTitle": "Ski & Recovery",
+    "heroTagline": "Het langstlopende jaarlijkse NA-evenement van Noorwegen.",
+    "openCta": "Openen",
+    "programCard": {
+      "eyebrow": "Programma",
+      "title": "Bekijk het programma",
+      "body": "Dagen, workshops, bijeenkomsten en sociale samenkomsten van de week."
+    },
+    "trailMapCard": {
+      "eyebrow": "Op de berg",
+      "title": "Pistekaart",
+      "body": "Blader en zoom in op de meest recente pistekaart van Trysil."
+    },
+    "trysilCard": {
+      "eyebrow": "Plan je verblijf",
+      "title": "Verblijf, liften en wat er open is in het dorp",
+      "body": "De officiële Trysil-site houdt voorzieningen, openingstijden en reisinformatie actueel — we linken daarheen in plaats van het hier te dupliceren.",
+      "cta": "Bezoek trysil.com"
+    }
+  },
   "readings": {
     "eyebrow": "Literatuur & formats",
     "title": "Literatuur.",
