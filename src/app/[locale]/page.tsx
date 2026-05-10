@@ -110,12 +110,18 @@ export default async function Home({
         </div>
       </section>
 
-      {/* ── Event cards — primary (next) first, secondary second ─ */}
-      <section className="mx-auto w-full max-w-4xl px-4 pt-7 sm:px-6 md:pt-12">
+      {/* ── Event cards — primary (next) first, secondary second, practical info third ─ */}
+      <section className="mx-auto w-full max-w-5xl px-4 pt-7 sm:px-6 md:pt-12">
         <h2 className="visually-hidden">{t("eventsSectionHidden")}</h2>
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+        <div className="grid gap-4 md:grid-cols-3 md:gap-6">
           <EventCard event={primary} featured nextUpLabel={t("nextUp")} />
           <EventCard event={secondary} nextUpLabel={t("nextUp")} />
+          <PracticalCard
+            eyebrow={t("practicalEyebrow")}
+            title={t("practicalTitle")}
+            subtitle={t("practicalSubtitle")}
+            cta={t("practicalCta")}
+          />
         </div>
       </section>
 
@@ -189,6 +195,69 @@ function NextUpStrip({
     >
       ─── {nextLabel}:&nbsp;{event.title}&nbsp;·&nbsp;{event.dateLabel}&nbsp;───
     </div>
+  );
+}
+
+function PracticalCard({
+  eyebrow,
+  title,
+  subtitle,
+  cta,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  cta: string;
+}) {
+  return (
+    <Link
+      href="/practical"
+      className="group relative block overflow-hidden rounded-xl text-cream shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+      style={{
+        background:
+          "linear-gradient(135deg, #2D2017 0%, #4F3424 55%, #8B5A2B 100%)",
+        padding: "22px 20px 20px",
+      }}
+    >
+      <div
+        className="label opacity-80"
+        style={{
+          fontSize: "11px",
+          letterSpacing: "0.3em",
+          marginBottom: "4px",
+        }}
+      >
+        {eyebrow}
+      </div>
+      <div
+        className="display pt-4 md:pt-6"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "var(--fs-display-m)",
+          lineHeight: "1",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        {title}
+      </div>
+      <div
+        className="mt-2 italic opacity-85"
+        style={{
+          fontFamily: "var(--font-fraunces), serif",
+          fontSize: "var(--fs-body-s)",
+          lineHeight: "1.4",
+        }}
+      >
+        {subtitle}
+      </div>
+      <div
+        className="label mt-4 flex items-center gap-2 transition-transform group-hover:gap-3"
+        style={{ fontSize: "12px", letterSpacing: "0.14em" }}
+      >
+        <span>{cta}</span>
+        <span aria-hidden>→</span>
+      </div>
+    </Link>
   );
 }
 

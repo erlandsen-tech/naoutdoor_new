@@ -35,7 +35,11 @@
     "aboutEyebrow": "À propos",
     "about": "NA Outdoor est une fraternité de membres de Narcotiques Anonymes Norvège qui trouvent force, lien et joie dans la nature.",
     "aboutTail": "Rendu possible par la Septième Tradition — soutenu uniquement par les contributions volontaires de nos membres.",
-    "eventsSectionHidden": "Événements annuels"
+    "eventsSectionHidden": "Événements annuels",
+    "practicalEyebrow": "Trysil · Pratique",
+    "practicalTitle": "Infos pratiques",
+    "practicalSubtitle": "Hébergement, contact et venir à Trysil",
+    "practicalCta": "Ouvrir"
   },
   "ski": {
     "heroEyebrow": "Hiver · Trysil · 8–13 mars 2027",
@@ -51,12 +55,28 @@
       "eyebrow": "Sur la montagne",
       "title": "Plan des pistes",
       "body": "Parcourez et zoomez sur le plan des pistes de Trysil le plus récent."
-    },
+    }
+  },
+  "practical": {
+    "heroEyebrow": "Trysil · Infos pratiques",
+    "heroTitle": "Infos pratiques",
+    "heroTagline": "Hébergement, contact et venir à Trysil.",
     "trysilCard": {
       "eyebrow": "Préparez votre séjour",
       "title": "Hébergement, remontées et ce qui est ouvert en station",
       "body": "Le site officiel de Trysil tient à jour les services, horaires et infos pratiques — nous y renvoyons plutôt que de les dupliquer ici.",
       "cta": "Visiter trysil.com"
+    },
+    "lodgingCard": {
+      "eyebrow": "Location de chalet",
+      "title": "Trysil Hyttegrend & Camping",
+      "body": "Pour louer un chalet, appelez :"
+    },
+    "contactCard": {
+      "eyebrow": "Questions",
+      "title": "Nous contacter",
+      "body": "Pour les questions sur la location de vélos, l'hébergement et autres, le mieux est de passer par notre page Facebook. Autres questions :",
+      "facebookLabel": "Notre page Facebook"
     }
   },
   "readings": {

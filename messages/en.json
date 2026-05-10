@@ -35,7 +35,11 @@
     "aboutEyebrow": "About us",
     "about": "NA Outdoor is a fellowship of members within Narcotics Anonymous Norway who find strength, connection, and joy through nature.",
     "aboutTail": "Made possible by the 7th Tradition — supported solely by voluntary contributions from our members.",
-    "eventsSectionHidden": "Annual events"
+    "eventsSectionHidden": "Annual events",
+    "practicalEyebrow": "Trysil · Practical",
+    "practicalTitle": "Practical info",
+    "practicalSubtitle": "Lodging, contact, and visiting Trysil",
+    "practicalCta": "Open"
   },
   "ski": {
     "heroEyebrow": "Winter · Trysil · Mar 8–13, 2027",
@@ -51,12 +55,28 @@
       "eyebrow": "On the mountain",
       "title": "Ski trail map",
       "body": "Browse and zoom into the latest Trysil piste map."
-    },
+    }
+  },
+  "practical": {
+    "heroEyebrow": "Trysil · Practical info",
+    "heroTitle": "Practical info",
+    "heroTagline": "Lodging, contact, and visiting Trysil.",
     "trysilCard": {
       "eyebrow": "Plan your stay",
       "title": "Lodging, lifts & what's open in town",
       "body": "The official Trysil site keeps amenities, opening hours, and travel info up to date — we link there instead of duplicating it here.",
       "cta": "Visit trysil.com"
+    },
+    "lodgingCard": {
+      "eyebrow": "Cabin rental",
+      "title": "Trysil Hyttegrend & Camping",
+      "body": "For cabin rental, call:"
+    },
+    "contactCard": {
+      "eyebrow": "Questions",
+      "title": "Get in touch",
+      "body": "Questions about bike rental, accommodation and similar are best asked on our Facebook page. Other questions:",
+      "facebookLabel": "Our Facebook page"
     }
   },
   "readings": {
