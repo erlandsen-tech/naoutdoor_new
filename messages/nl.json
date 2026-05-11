@@ -35,7 +35,11 @@
     "aboutEyebrow": "Over ons",
     "about": "NA Outdoor is een gemeenschap van leden van Narcotics Anonymous Noorwegen die in de natuur kracht, verbinding en vreugde vinden.",
     "aboutTail": "Mogelijk gemaakt door de Zevende Traditie — uitsluitend gedragen door vrijwillige bijdragen van onze leden.",
-    "eventsSectionHidden": "Jaarlijkse evenementen"
+    "eventsSectionHidden": "Jaarlijkse evenementen",
+    "practicalEyebrow": "Trysil · Praktisch",
+    "practicalTitle": "Praktische info",
+    "practicalSubtitle": "Verblijf, contact en de reis naar Trysil",
+    "practicalCta": "Openen"
   },
   "ski": {
     "heroEyebrow": "Winter · Trysil · 8–13 maart 2027",
@@ -51,12 +55,28 @@
       "eyebrow": "Op de berg",
       "title": "Pistekaart",
       "body": "Blader en zoom in op de meest recente pistekaart van Trysil."
-    },
+    }
+  },
+  "practical": {
+    "heroEyebrow": "Trysil · Praktische info",
+    "heroTitle": "Praktische info",
+    "heroTagline": "Verblijf, contact en bezoek aan Trysil.",
     "trysilCard": {
       "eyebrow": "Plan je verblijf",
       "title": "Verblijf, liften en wat er open is in het dorp",
       "body": "De officiële Trysil-site houdt voorzieningen, openingstijden en reisinformatie actueel — we linken daarheen in plaats van het hier te dupliceren.",
       "cta": "Bezoek trysil.com"
+    },
+    "lodgingCard": {
+      "eyebrow": "Huisje huren",
+      "title": "Trysil Hyttegrend & Camping",
+      "body": "Voor het huren van een huisje, bel:"
+    },
+    "contactCard": {
+      "eyebrow": "Vragen",
+      "title": "Neem contact op",
+      "body": "Vragen over fietsverhuur, accommodatie en dergelijke kun je het beste stellen op onze Facebook-pagina. Andere vragen:",
+      "facebookLabel": "Onze Facebook-pagina"
     }
   },
   "readings": {

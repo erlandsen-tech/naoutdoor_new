@@ -35,7 +35,11 @@
     "aboutEyebrow": "Meistä",
     "about": "NA Outdoor on yhteisö Nimettömien Narkomaanien Norjan jäsenistä, jotka löytävät voimaa, yhteyttä ja iloa luonnosta.",
     "aboutTail": "Mahdollistettu seitsemännen perinteen kautta — perustuu yksinomaan jäsenten vapaaehtoisiin lahjoituksiin.",
-    "eventsSectionHidden": "Vuosittaiset tapahtumat"
+    "eventsSectionHidden": "Vuosittaiset tapahtumat",
+    "practicalEyebrow": "Trysil · Käytännön",
+    "practicalTitle": "Käytännön tietoa",
+    "practicalSubtitle": "Majoitus, yhteystiedot ja matka Trysiliin",
+    "practicalCta": "Avaa"
   },
   "ski": {
     "heroEyebrow": "Talvi · Trysil · 8.–13.3.2027",
@@ -51,12 +55,28 @@
       "eyebrow": "Tunturissa",
       "title": "Rinnekartta",
       "body": "Selaa ja zoomaa Trysilin uusinta rinnekarttaa."
-    },
+    }
+  },
+  "practical": {
+    "heroEyebrow": "Trysil · Käytännön tietoa",
+    "heroTitle": "Käytännön tietoa",
+    "heroTagline": "Majoitus, yhteystiedot ja Trysilin vierailu.",
     "trysilCard": {
       "eyebrow": "Suunnittele majoitus",
       "title": "Majoitus, hissit ja mitä kylässä on auki",
       "body": "Trysilin virallinen sivusto pitää palvelut, aukioloajat ja matkatiedot ajan tasalla — linkitämme sinne sen sijaan, että toistaisimme tiedot täällä.",
       "cta": "Käy trysil.com"
+    },
+    "lodgingCard": {
+      "eyebrow": "Mökkivuokraus",
+      "title": "Trysil Hyttegrend & Camping",
+      "body": "Mökin vuokrausta varten soita:"
+    },
+    "contactCard": {
+      "eyebrow": "Kysymykset",
+      "title": "Ota yhteyttä",
+      "body": "Kysymykset pyörävuokrauksesta, majoituksesta ja vastaavista hoituvat parhaiten Facebook-sivumme kautta. Muut kysymykset:",
+      "facebookLabel": "Facebook-sivumme"
     }
   },
   "readings": {

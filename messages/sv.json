@@ -35,7 +35,11 @@
     "aboutEyebrow": "Om oss",
     "about": "NA Outdoor är en gemenskap av medlemmar i Anonyma Narkomaner Norge som finner styrka, gemenskap och glädje i naturen.",
     "aboutTail": "Möjliggjort genom den sjunde traditionen — bärs enbart av frivilliga bidrag från medlemmarna.",
-    "eventsSectionHidden": "Årliga evenemang"
+    "eventsSectionHidden": "Årliga evenemang",
+    "practicalEyebrow": "Trysil · Praktiskt",
+    "practicalTitle": "Praktisk info",
+    "practicalSubtitle": "Boende, kontakt och resan till Trysil",
+    "practicalCta": "Öppna"
   },
   "ski": {
     "heroEyebrow": "Vinter · Trysil · 8–13 mars 2027",
@@ -51,12 +55,28 @@
       "eyebrow": "I backen",
       "title": "Pistkarta",
       "body": "Bläddra och zooma i den senaste pistkartan för Trysil."
-    },
+    }
+  },
+  "practical": {
+    "heroEyebrow": "Trysil · Praktisk info",
+    "heroTitle": "Praktisk info",
+    "heroTagline": "Boende, kontakt och besök i Trysil.",
     "trysilCard": {
       "eyebrow": "Planera vistelsen",
       "title": "Boende, liftar och vad som är öppet i byn",
       "body": "Trysils officiella webbplats håller faciliteter, öppettider och reseinformation uppdaterade — vi länkar dit istället för att duplicera det här.",
       "cta": "Besök trysil.com"
+    },
+    "lodgingCard": {
+      "eyebrow": "Stuguthyrning",
+      "title": "Trysil Hyttegrend & Camping",
+      "body": "För stuguthyrning, ring:"
+    },
+    "contactCard": {
+      "eyebrow": "Frågor",
+      "title": "Kontakta oss",
+      "body": "Frågor om cykeluthyrning, boende och liknande ställs bäst på vår Facebook-sida. Övriga frågor:",
+      "facebookLabel": "Vår Facebook-sida"
     }
   },
   "readings": {

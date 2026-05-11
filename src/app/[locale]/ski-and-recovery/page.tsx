@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import ClickableFlyer from "@/components/ClickableFlyer";
@@ -88,50 +87,6 @@ export default async function SkiAndRecovery({
             openLabel={t("openCta")}
           />
         </div>
-
-        <a
-          href="https://www.trysil.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group mt-6 flex items-start gap-4 rounded-[12px] border border-espresso/10 bg-cream/60 p-5 transition-all hover:-translate-y-0.5 hover:border-espresso/30 hover:bg-cream hover:shadow-[var(--shadow-card)]"
-        >
-          <div className="flex-1">
-            <div
-              className="label text-sunset"
-              style={{ fontSize: "10px", letterSpacing: "0.22em", marginBottom: "6px" }}
-            >
-              {t("trysilCard.eyebrow")}
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-fraunces), serif",
-                fontSize: "var(--fs-title-s, var(--fs-body))",
-                fontWeight: 700,
-                letterSpacing: "-0.01em",
-                lineHeight: "1.2",
-              }}
-            >
-              {t("trysilCard.title")}
-            </div>
-            <p
-              className="mt-2 italic text-ink/70"
-              style={{
-                fontFamily: "var(--font-fraunces), serif",
-                fontSize: "var(--fs-body-s)",
-                lineHeight: "1.5",
-              }}
-            >
-              {t("trysilCard.body")}
-            </p>
-            <div
-              className="label mt-4 flex items-center gap-2 text-espresso transition-transform group-hover:gap-3"
-              style={{ fontSize: "11px", letterSpacing: "0.18em" }}
-            >
-              <span>{t("trysilCard.cta")}</span>
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-            </div>
-          </div>
-        </a>
 
         {/* 2027 flyer — click to open fullscreen lightbox */}
         <div className="mt-10 md:mt-14">

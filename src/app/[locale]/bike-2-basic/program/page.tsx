@@ -130,42 +130,6 @@ export default function Program() {
           </li>
         ))}
       </ol>
-
-      <section
-        className="mb-10 rounded-[14px] border border-espresso/10 bg-cream-soft/60 p-5 sm:p-6"
-        style={{
-          fontFamily: "var(--font-fraunces), serif",
-          fontSize: "var(--fs-body-s)",
-          lineHeight: "1.6",
-        }}
-      >
-        <p>
-          For cabin rental, call{" "}
-          <span className="font-semibold">Trysil Hyttegrend &amp; Camping</span>{" "}
-          on{" "}
-          <a
-            href="tel:+4790132761"
-            className="underline decoration-sunset/60 underline-offset-2 hover:decoration-sunset"
-          >
-            +47 901 32 761
-          </a>
-          .
-        </p>
-        <p className="mt-2">
-          Questions about bike rental, accommodation and similar are best asked
-          on our Facebook page. Other questions:{" "}
-          <a
-            href="mailto:mail@naoutdoor.org"
-            className="underline decoration-sunset/60 underline-offset-2 hover:decoration-sunset"
-          >
-            mail@naoutdoor.org
-          </a>
-          .
-        </p>
-        <p className="mt-3 italic text-ink/70">
-          Welcome to a weekend of fellowship and activities in Trysil.
-        </p>
-      </section>
     </div>
   );
 }
